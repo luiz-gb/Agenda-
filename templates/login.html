@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="/static/login.css">
+    <link rel="icon" href="https://s3-alpha-sig.figma.com/img/af2d/a5ed/f805093676926c80e118c0a98dd2e693?Expires=1711324800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=At~010jtGPoDG-dFcATbXQWs96rWIQyHscAC15Ao0bUTv70qdMjuKCkiyKzYLuCEl5~y-CYyEAzAkE6P-KsqRx4CJItITwoKdvKQFxDAxOWnL0LKn98q4NJ~mJV0HuVKg7TJHv-tsykKa348sF5j~RgN-Mte83uwhp9l1b5CPo608Io-cIyxoZP7JCIoXmJuwsYRCjF~BPECjjDn5C-u5Xe7DCcWtlce9Xm4iagv9B3FLXkcNuIgb3jF0FkfAdsyKw6~2Z1eDlXOfMlHNA-PQ5k8V7FUCQE7GTqOs4KIg9vQ73Bd0brpvvg63WINKlxVBZhWXvzJRWuPOP27NcAA~A__">
+</head>
+<body>
+    <header>
+        <img class="logo" src="/static/imagens/ifpb2.png" alt="jae">
+    </header>
+    <main>
+        <div class="box-esquerda">
+            <img class="imagem1" src="/static/imagens/Schedule.svg" alt="">
+        </div>
+        <div class="box-direita">
+            <form method="post">
+                <h5 class="titulo-form">Seja bem vindo(a)!</h5>
+                
+                <div class="box-form">
+                    <input class="input-cpf" type="text" placeholder="matricula..." name="cpf">
+                    <input class="input-senha" type="password" placeholder="suasenha@exemplo" name="senha">
+                </div>
+
+                <input class="botao-submit" type="submit" value=Entrar>
+
+            </form>
+
+            <p class="paragrafo2">Ainda não tem conta?</p>
+            <a class="link1" href="{{ url_for('cadastro') }}">Criar conta gratuitamente</a>
+        </div>
+    </main>
+</body>
+</html>

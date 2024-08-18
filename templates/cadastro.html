@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="/static/cadastro.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="/static/imagens/ifpb2.png" alt="jae">
+    </header>
+    <main>
+        <form method="post">
+            <h5 class="titulo-form">Cadastre-se</h5>
+
+            <input class="input-nome inputs" type="text" placeholder="Nome Completo" name="nome_usuario">
+            <input class="input-cpf inputs" type="text" placeholder="Matrícula" name="cpf">
+            <input class="input-email inputs" type="text" placeholder="Email" name="email">
+            <input class="input-senha inputs" type="password" placeholder="Senha" name="senha">
+            <input class="input-senha inputs" type="password" placeholder="Confirme sua senha" name="confirmar_senha">
+            <select placeholder="Selecionar turma" name="selecionarturma" class="input-select">
+                <option>3º de Informática</option>
+                <option>2º de Informática A</option>
+                <option>2º de Informática B</option>
+                <option>2º de de Meio Ambiente B</option>
+                <option>1º de Informática A</option>
+                <option>1º de Informática B</option>
+                <option>1º de Meio Ambiente A</option>
+                <option>1º de Meio Ambiente B</option>
+            </select>
+
+            <input class="botao-submit" type="submit" value=Entrar>
+
+        </form>
+        
+        <p class="paragrafo2">Já possui uma conta?</p>
+        <a class="link1" href="{{ url_for('login_page') }}">Faça Login</a>
+    </main>
+</body>
+</html>
