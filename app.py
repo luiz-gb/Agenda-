@@ -1,20 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from usuarios import *
-from flask_login import (
-    LoginManager,
-    UserMixin,
-    login_user,
-    logout_user,
-    login_required,
-    current_user,
-)
 import json
 
 app = Flask(__name__)
 app.secret_key = "leticiaelucastransammuito"
-
-login_manager = LoginManager(app)
-login_manager.login_view = "login"
 
 
 @app.route("/Login", methods=["GET", "POST"])
