@@ -3,7 +3,7 @@ from usuarios import *
 import json
 
 app = Flask(__name__)
-app.secret_key = "leticiaelucastransammuito"
+app.secret_key = "NSNS2UQ8Q6FDQ6FSBA6"
 
 
 @app.route("/Login", methods=["GET", "POST"])
@@ -15,13 +15,19 @@ def login_page():
         with open("usuarios.json") as usuariosA:
             usuarios = json.load(usuariosA)
 
+            usuario_valido = False
             for usuario in usuarios:
                 if usuario["matricula"] == cpf and usuario["senha"] == senha:
-                    return redirect(url_for("home_page"))
+                    usuario_valido = True
+                    break
 
-            # Se não encontrar o usuário, mostrar mensagem de erro
-            flash("Usuário inválido")
-            return redirect(url_for("login_page"))
+            if usuario_valido:
+                return redirect(url_for("home_page"))
+
+            else:
+                # Se não encontrar o usuário, mostrar mensagem de erro
+                flash("Usuário inválido", "error")
+                return redirect(url_for("login_page"))
 
     else:
         return render_template("login.html")

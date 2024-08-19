@@ -1,9 +1,23 @@
 [
     {
         "nome": "luiz",
-        "matricula": "1",
-        "email": "1",
+        "matricula": "1234",
+        "email": "",
         "senha": "1234",
+        "turma": "3\u00ba de Inform\u00e1tica"
+    },
+    {
+        "nome": "",
+        "matricula": "",
+        "email": "",
+        "senha": "",
+        "turma": "3\u00ba de Inform\u00e1tica"
+    },
+    {
+        "nome": "alberto",
+        "matricula": "1234",
+        "email": "1234",
+        "senha": "1",
         "turma": "3\u00ba de Inform\u00e1tica"
     }
 ]

@@ -11,7 +11,24 @@
     <header>
         <img class="logo" src="/static/imagens/ifpb2.png" alt="jae">
     </header>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                    <div class="card">
+                        <p class="alert">Usuário ou senha inválidos</p>
+                        <button onclick="tirar_card()">X</button>
+                        <div class="barra">
+                            <div class="barra2"></div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <main>
+
         <div class="box-esquerda">
             <img class="imagem1" src="/static/imagens/Schedule.svg" alt="">
         </div>
@@ -20,8 +37,14 @@
                 <h5 class="titulo-form">Seja bem vindo(a)!</h5>
                 
                 <div class="box-form">
-                    <input class="input-cpf" type="text" placeholder="matricula..." name="cpf">
-                    <input class="input-senha" type="password" placeholder="suasenha@exemplo" name="senha">
+
+                    <div class="controle">
+                        <input class="input-cpf" type="text" placeholder="matricula..." name="cpf">
+                    </div>
+                    <div class="controle">
+                        <input class="input-senha" type="password" placeholder="suasenha@exemplo" name="senha">
+                    </div>
+
                 </div>
 
                 <input class="botao-submit" type="submit" value=Entrar>
@@ -32,5 +55,6 @@
             <a class="link1" href="{{ url_for('cadastro') }}">Criar conta gratuitamente</a>
         </div>
     </main>
+    <script src= "{{ url_for('static', filename='scripts/login.js') }}" ></script>
 </body>
 </html>

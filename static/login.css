@@ -97,6 +97,7 @@ form {
     background-repeat: no-repeat;
     background-position: 20px center;
     padding-left: 60px;
+    width: calc(100% - 77px);
 }
 
 .input-cpf {
@@ -132,4 +133,58 @@ form {
 
 .link1:hover {
     color: #a3a3a3;
+}
+
+/* Validação de formulário */
+
+.input-erro {
+    border: solid 1px rgb(153, 0, 0);
+}
+
+/* Card */
+
+.card {
+    position: absolute;
+    display: flex;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 10px;
+    background-color: #0CBC8B;
+    align-items: center;
+    justify-self: center;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card button {
+    margin-left: 15px;
+    border: none;
+    color: black;
+    font-size: 20px;
+    background-color: #0CBC8B;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.barra {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: #0CBC8B;
+  
+}
+
+.barra2 {
+    height: 100%;
+    width: 100%;
+    background-color: #046b4e; /* Cor da linha de progresso */
+    transform-origin: left center;
+    transition: transform 1s linear;
+
 }
