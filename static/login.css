@@ -88,20 +88,28 @@ form {
 }
 
 .input-cpf, .input-senha {
-    background-color: #353535;
-    outline: none;
-    border: none;
-    padding: 17px;
-    border-radius: 21px;
-    color: rgb(231, 231, 231);
+    background-color: #353535 !important;
+    outline: none !important;
+    border: none !important;
+    padding: 17px !important;
+    border-radius: 21px !important;
+    color: rgb(231, 231, 231) !important;
+    background-repeat: no-repeat !important;
+    background-position: 20px center !important;
+    padding-left: 60px !important;
+    width: calc(100% - 77px) !important;
+}
+
+.input-cpf:-webkit-autofill {
+    color: rgb(231, 231, 231) !important;
+    transition: background-color 5000s ease-in-out 0s;
+    background-image: url(/static/imagens/4.png);
     background-repeat: no-repeat;
     background-position: 20px center;
-    padding-left: 60px;
-    width: calc(100% - 77px);
 }
 
 .input-cpf {
-    background-image: url(/static/imagens/4.png);
+    background-image: url(/static/imagens/4.png) !important;
 }
 
 .input-senha {
@@ -157,6 +165,7 @@ form {
     top: 30px;
     font-weight: bold;
     font-size: 20px;
+    opacity: 0.8;
 }
 
 .card button {
@@ -187,4 +196,43 @@ form {
     transform-origin: left center;
     transition: transform 1s linear;
 
+}
+
+/* Urgência */
+
+.controle {
+    position: relative;
+}
+
+.aviso {
+    display: none;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    top: 38px;
+    font-size: 14px;
+    left: 10px;
+    z-index: 10;
+    opacity: 0.8;
+}
+
+
+.aviso::before {
+    content: "";
+    position: absolute;
+    top: -8px; 
+    left: 84%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px; 
+    border-style: solid;
+    border-color: transparent transparent white transparent; 
+}
+
+.aviso img {
+    margin-left: 20px;
+    height: 25px;
+    width: auto;;
 }

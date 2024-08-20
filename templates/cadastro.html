@@ -14,11 +14,46 @@
         <form method="post">
             <h5 class="titulo-form">Cadastre-se</h5>
 
-            <input class="input-nome inputs" type="text" placeholder="Nome Completo" name="nome_usuario">
-            <input class="input-cpf inputs" type="text" placeholder="Matrícula" name="cpf">
-            <input class="input-email inputs" type="text" placeholder="Email" name="email">
-            <input class="input-senha inputs" type="password" placeholder="Senha" name="senha">
-            <input class="input-senha inputs" type="password" placeholder="Confirme sua senha" name="confirmar_senha">
+            <div class="controle">
+                <input class="input-nome inputs" type="text" placeholder="Nome Completo" name="nome_usuario">
+                <div class="aviso aviso-nome">
+                    <p>Digite pelo menos 4 caractéres</p>
+                    <img src="/static/imagens/urgencia.svg" alt="">
+                </div>
+            </div>
+
+            <div class="controle">
+                <input class="input-cpf inputs" type="text" placeholder="Matrícula" name="cpf">
+                <div class="aviso aviso-matricula">
+                    <p>Digite pelo menos 4 caractéres</p>
+                    <img src="/static/imagens/urgencia.svg" alt="">
+                </div>
+            </div>
+
+            <div class="controle">
+                <input class="input-email inputs" type="gmail" placeholder="Email" name="email">
+                <div class="aviso aviso-email">
+                    <p>Digite pelo menos 4 caractéres</p>
+                    <img src="/static/imagens/urgencia.svg" alt="">
+                </div>
+            </div>
+
+            <div class="controle">
+                <input class="input-senha inputs" type="password" placeholder="Senha" name="senha">
+                <div class="aviso aviso-senha">
+                    <p>Digite pelo menos 4 caractéres</p>
+                    <img src="/static/imagens/urgencia.svg" alt="paraa">
+                </div>
+            </div>
+
+            <div class="controle">
+                <input class="input-senha input-senha2 inputs" type="password" placeholder="Confirme sua senha" name="confirmar_senha">
+                <div class="aviso aviso-senha2">
+                    <p>Digite pelo menos 4 caractéres</p>
+                    <img src="/static/imagens/urgencia.svg" alt="">
+                </div>
+            </div>
+            
             <select placeholder="Selecionar turma" name="selecionarturma" class="input-select">
                 <option>3º de Informática</option>
                 <option>2º de Informática A</option>
@@ -37,5 +72,6 @@
         <p class="paragrafo2">Já possui uma conta?</p>
         <a class="link1" href="{{ url_for('login_page') }}">Faça Login</a>
     </main>
+    <script src= "{{ url_for('static', filename='scripts/cadastro.js') }}" ></script>
 </body>
 </html>

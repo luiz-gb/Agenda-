@@ -3,6 +3,13 @@ const matricula = document.querySelector('.input-cpf')
 const senha = document.querySelector('.input-senha')
 const card = document.querySelector('.card')
 
+const aviso_senha = document.querySelector('.aviso-senha')
+const aviso_senha_p = document.querySelector('.aviso-senha p')
+const aviso_matricula = document.querySelector('.aviso-matricula')
+const aviso_matricula_p = document.querySelector('.aviso-matricula p')
+const avisos = document.querySelectorAll('.aviso')
+const inputs = document.querySelectorAll('.inputs')
+
 function submitform (event) {
     event.preventDefault()
 
@@ -11,13 +18,9 @@ function submitform (event) {
 
     let tem_erro = false
 
-    if (valormatricula === ''){
-        matricula.classList.add('input-erro')
-        tem_erro = true
-    }
-
-    if (valorsenha === '') {
-        senha.classList.add('input-erro')
+    if (valormatricula === '' || valorsenha === ''){
+        aviso_matricula.style.display = 'flex'
+        aviso_matricula_p.innerText = 'Preencha o formulário totalmente'
         tem_erro = true
     }
 
@@ -55,3 +58,15 @@ window.onload = function() {
     startProgressBar(tempoDeExibicao);
     setTimeout(tirar_card, tempoDeExibicao);
 };
+
+
+// tirat os avisos ao clicar no input
+
+function tirar_aviso (aviso) {
+    if (aviso.style.display === 'flex') {
+        aviso.style.display = 'none'
+    }
+}
+
+matricula.addEventListener('focus', () => tirar_aviso(aviso_matricula))
+senha.addEventListener('focus', () => tirar_aviso(aviso_senha))
