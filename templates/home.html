@@ -1,11 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda</title>
+    <link rel="stylesheet" href="/static/home.css">
+    <title>Agenda Estudantil</title>
 </head>
 <body>
-    eae mano
+
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="/static/imagens/ifpb2.png" alt="Logo">
+        </div>
+        <div class="navbar-search">
+            <input type="text" placeholder="Buscar na Agenda">
+            <img src="/static/imagens/lupa.png" alt="Lupa" id="search-icon">
+        </div>
+        <div class="navbar-profile">
+            <img src="/static/imagens/profile.png" alt="Profile">
+        </div>
+
+        <div class="perfil-expanded">
+            <a href="{{ url_for('perfil') }}">
+                <div>
+                    <img src="/static/imagens/profile.svg" alt="">
+                    <p> Perfil </p>
+                </div>
+            </a>
+            <a href="{{ url_for('logout')}}">
+                <div>
+            
+                    <img src="/static/imagens/exit.svg" alt="">
+                    <p> Sair </p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <main class="principal">
+        <div class="parte1-principal">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prev-month-btn">&#10094;</button>
+                    <h2 id="month-year"></h2>
+                    <button id="next-month-btn">&#10095;</button>
+                </div>
+                <div class="calendar-body">
+                    <div class="calendar-weekdays">
+                        <div>Dom</div>
+                        <div>Seg</div>
+                        <div>Ter</div>
+                        <div>Qua</div>
+                        <div>Qui</div>
+                        <div>Sex</div>
+                        <div>Sáb</div>
+                    </div>
+                    <div class="calendar-days" id="calendar-days"></div>
+                </div>
+            </div>
+
+            <div class="urgencia">
+                <div class="parte-cima-urgencia">
+                    <h5>Urgências da tropa</h5>
+                    <img src="/static/imagens/urgencia2.svg" alt="">
+                </div>
+
+                <div class="parte-baixo-urgencia">
+                    <ul>
+                        <li class="urgencia-marrom">
+                            <img src="/static/imagens/urgenciaMARROM.svg" alt="">
+                            <p>SEII VI</p>
+                        </li>
+                        <li class="urgencia-marrom">
+                            <img src="/static/imagens/urgenciaMARROM.svg" alt="">
+                            <p>PROVA DE MATEMÁTICA</p>
+                        </li>
+                        <li class="urgencia-verde">
+                            <img src="/static/imagens/urgenciaVERDE.svg" alt="">
+                            <p>TRABALHO DE HISTÓRIA</p>
+                        </li>
+                        <li class="urgencia-verde">
+                            <img src="/static/imagens/urgenciaVERDE.svg" alt="">
+                            <p>TRABALHO DE SOÊNIA</p>
+                        </li>
+                        <li class="urgencia-verde">
+                            <img src="/static/imagens/urgenciaVERDE.svg" alt="">
+                            <p>TRABALHO DE SOÊNIA</p>
+                        </li>
+                        <li class="urgencia-verde">
+                            <img src="/static/imagens/urgenciaVERDE.svg" alt="">
+                            <p>TRABALHO DE SOÊNIA</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="parte2-principal"> 
+            
+        </div>
+    </main>
+
+
+    <script src= "{{ url_for('static', filename='scripts/home.js') }}" ></script>
+
 </body>
 </html>

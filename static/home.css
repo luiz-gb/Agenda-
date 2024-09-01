@@ -1,0 +1,278 @@
+/* Reset geral e configuração da fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #1F1F1F;
+    height: 60px;
+    width: 100%;
+}
+
+.navbar-logo img {
+    height: 40px;
+    width: 40px;
+}
+
+.navbar-search {
+    flex: 1;
+    margin: 0 20px;
+    position: relative;
+    max-width: 40px;
+    transition: max-width 0.5s ease;
+}
+
+.navbar-search input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: #ffffff;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.navbar-search img {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.navbar-profile img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Estilo quando o campo de busca está ativo */
+.navbar-search.active {
+    max-width: 300px;
+}
+
+.navbar-search.active input {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Container do calendário */
+.calendar-container {
+    background-color: #1F1F1F;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.calendar-header button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.calendar-weekdays {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    text-align: center;
+}
+
+.calendar-weekdays div {
+    width: calc(100% / 7);
+}
+
+.calendar-days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.calendar-days div {
+    width: calc(100% / 7);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-days div:hover {
+    background-color: #eee;
+}
+
+.calendar-days div.current-day {
+    background-color: #28a745;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* fim calendário */
+
+
+/* urgências */
+
+.principal {
+    margin-top: 50px;
+    width: 70%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.parte1-principal {
+    display: flex;
+    align-items: stretch;
+}
+
+.urgencia {
+    margin-left: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.parte-cima-urgencia {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    justify-content: space-between;
+    background-color: #B65118;
+    padding: 3px;
+    padding-left: 20px;
+    border-radius: 8px;
+}
+
+.parte-cima-urgencia img {
+    height: auto;
+    width: 30px;
+}
+
+
+.parte-baixo-urgencia {
+    background-color: #353535;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 10px;
+    width: 100%;
+    flex-grow: 1;
+    
+}
+
+.parte-baixo-urgencia ul {
+    list-style-type: none;
+    padding-left: 0; 
+    margin: 0;
+}
+
+.parte-baixo-urgencia li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.parte-baixo-urgencia p {
+    font-size: 20px;
+}
+
+.urgencia-marrom p {
+    color: #B65118;
+}
+
+.urgencia-verde p {
+    color: #0CBC8B;
+}
+
+.parte-baixo-urgencia img {
+    height: auto;
+    width: 30px;
+    margin-right: 20px;
+}
+
+/* Partezona de baixo */
+
+.parte2-principal {
+    background-color: #353535;
+    border-radius: 10px;
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* Perfil expanded */
+
+.perfil-expanded {
+    background-color: #353535;
+    display: none;
+    color: white;
+    border-radius: 10px;
+    width: 120px;
+    position: absolute;
+   right: 20px;
+   top: 50px;
+}
+
+.perfil-expanded a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.perfil-expanded div {
+    display: flex;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.perfil-expanded img {
+    margin-right: 10px;
+    height: auto;
+    width: 18px;
+}
+
+
+
+

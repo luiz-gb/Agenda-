@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from usuarios import *
 import json
 
@@ -22,6 +22,7 @@ def login_page():
                     break
 
             if usuario_valido:
+                session["usuario_logado"] = cpf
                 return redirect(url_for("home_page"))
 
             else:
@@ -31,11 +32,6 @@ def login_page():
 
     else:
         return render_template("login.html")
-
-
-@app.route("/Home")
-def home_page():
-    return render_template("home.html")
 
 
 @app.route("/Cadastro", methods=["GET", "POST"])
@@ -55,6 +51,26 @@ def cadastro():
 
     else:
         return render_template("cadastro.html")
+
+
+@app.route("/Home")
+def home_page():
+    if session.get("usuario_logado"):
+        return render_template("home.html")
+
+    else:
+        return redirect(url_for("login_page"))
+
+
+@app.route("/logout")
+def logout():
+    session.pop("usuario_logado", None)
+    return redirect(url_for("login_page"))
+
+
+@app.route("/Perfil")
+def perfil():
+    return "eae"
 
 
 if __name__ == "__main__":
