@@ -98,15 +98,29 @@
         <div class="parte2-principal"> 
             <h5 class="titulo-parte2">AGENDA DE ATIVIDADES</h5>
 
-            <div>
-                <h5>07/08/2024</h5>
-                <div>
+            <div class="super-container">
+                <div class="container-atividade">
+                    <h5>dd/mm/aaaa</h5>
                     <ul>
                         <li>Estudar pra matemática</li>
                         <li>Estudar pra física</li>
                     </ul>
                 </div>
-                <a href="{{ url_for('cadastro_atividades')}}">Cadastrar atividades</a>
+
+                <div class="container-atividade">
+                    <h5>dd/mm/aaaa</h5>
+                    <div>
+                        <ul>
+                            <li>Estudar pra matemática</li>
+                            <li>Estudar pra física</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a class="botao-atividade" href="{{ url_for('cadastro_atividades')}}">
+                    <p>Cadastrar Atividade</p>
+                    <img src="/static/imagens/maizin.svg" alt="">
+                </a>
             </div>
         </div>
     </main>
