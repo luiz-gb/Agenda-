@@ -73,5 +73,10 @@ def perfil():
     return "eae"
 
 
+@app.route("/Cadastro-Atividades")
+def cadastro_atividades():
+    return render_template("cadastro-atividades.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
