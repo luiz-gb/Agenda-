@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/base-navbar.css">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('home_page') }}">
+            <div class="navbar-logo">
+                <img src="/static/imagens/ifpb2.png" alt="Logo">
+            </div>
+        </a>
+        <div class="navbar-search">
+            <input type="text" placeholder="Buscar na Agenda">
+            <img src="/static/imagens/lupa.png" alt="Lupa" id="search-icon">
+        </div>
+        <div class="navbar-profile">
+            <img src="/static/imagens/profile.png" alt="Profile">
+        </div>
+
+        <div class="perfil-expanded">
+            <a href="{{ url_for('perfil') }}">
+                <div>
+                    <img src="/static/imagens/profile.svg" alt="">
+                    <p> Perfil </p>
+                </div>
+            </a>
+            <a href="{{ url_for('logout')}}">
+                <div>
+            
+                    <img src="/static/imagens/exit.svg" alt="">
+                    <p> Sair </p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

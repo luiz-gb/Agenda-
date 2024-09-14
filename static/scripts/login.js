@@ -70,3 +70,4 @@ function tirar_aviso (aviso) {
 
 matricula.addEventListener('focus', () => tirar_aviso(aviso_matricula))
 senha.addEventListener('focus', () => tirar_aviso(aviso_senha))
+

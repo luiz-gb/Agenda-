@@ -21,9 +21,9 @@ header {
 }
 
 .logo {
-    height: 50px;
+    height: 8.5vh;
     width: auto;
-    margin-bottom: 20px;
+    margin-bottom: 3.2vh;
 }
 
 main {
@@ -33,7 +33,7 @@ main {
     flex: 1;
     overflow: hidden; /* Evita que adicione rolagem */
     height: calc(100vh - 20vh);
-    width: 70%;
+    width: 150vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -42,48 +42,51 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    height: calc(80vh - 20px);
 }
 
 .imagem1 {
-    height: 458px;
+    height: 0;
     width: auto;
+    flex: 1;
 }
 
 .box-direita {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 55vh;
 }
 
 form {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    height: 51%;
-    margin-top: 20px;
-    width: 70%;
+    height: auto;
+    width: 57vh;
+    gap: 1vh;
+    flex: 1;
 }
 
 .box-form {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    height: 116px;
+    height: 20vh;
 }
 
 .titulo-form {
     color: white;
     align-self: center;
-    font-size: 20px;
+    font-size: 3.3vh;
     margin-top: 15px;
 }
 
 .paragrafo2 {
     text-align: center;
     color: white;
-    margin-top: 25px;
-    font-size: 18px;
+    margin-top: 4vh;
+    font-size: 3vh;
     font-weight: 400;
 }
 
@@ -91,13 +94,16 @@ form {
     background-color: #353535 !important;
     outline: none !important;
     border: none !important;
-    padding: 17px !important;
-    border-radius: 21px !important;
+    padding: 4.5vh !important;
+    border-radius: 3.5vh !important;
     color: rgb(231, 231, 231) !important;
     background-repeat: no-repeat !important;
     background-position: 20px center !important;
     padding-left: 60px !important;
-    width: calc(100% - 77px) !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    height: 3vh;
+    font-size: 2vh;
 }
 
 .input-cpf:-webkit-autofill {
@@ -106,14 +112,17 @@ form {
     background-image: url(/static/imagens/4.png);
     background-repeat: no-repeat;
     background-position: 20px center;
+    -webkit-text-fill-color: rgb(231, 231, 231) !important;
 }
 
 .input-cpf {
     background-image: url(/static/imagens/4.png) !important;
+    background-size: 3.8vh auto;
 }
 
 .input-senha {
     background-image: url(/static/imagens/5.png);
+    background-size: 3.8vh auto;
 }
 
 .botao-submit {
@@ -122,10 +131,11 @@ form {
     border: none;
     font-weight: bold;
     font-size: 23px;
-    padding: 1px;
+    padding: 0.5vh;
     cursor: pointer;
     transition: background-color 0.5s;
     font-weight: 700;
+    height: 6vh;
 }
 
 .botao-submit:hover {
@@ -135,7 +145,7 @@ form {
 .link1 {
     color: #ffffff;
     font-weight: 700;
-    font-size: 19px;
+    font-size: 3.2vh;
     transition: color 0.5s;
 }
 

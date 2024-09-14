@@ -1,0 +1,113 @@
+/* Reset geral e configuração da fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 90vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #1F1F1F;
+    height: 60px;
+    width: 100%;
+}
+
+.navbar-logo img {
+    height: 40px;
+    width: 40px;
+}
+
+.navbar-search {
+    flex: 1;
+    margin: 0 20px;
+    position: relative;
+    max-width: 40px;
+    transition: max-width 0.5s ease;
+}
+
+.navbar-search input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: #ffffff;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.navbar-search img {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.navbar-profile img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Estilo quando o campo de busca está ativo */
+.navbar-search.active {
+    max-width: 300px;
+}
+
+.navbar-search.active input {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Perfil expanded */
+
+.perfil-expanded {
+    background-color: #353535;
+    display: none;
+    color: white;
+    border-radius: 10px;
+    width: 120px;
+    position: absolute;
+   right: 20px;
+   top: 50px;
+}
+
+.perfil-expanded a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.perfil-expanded div {
+    display: flex;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.perfil-expanded img {
+    margin-right: 10px;
+    height: auto;
+    width: 18px;
+}

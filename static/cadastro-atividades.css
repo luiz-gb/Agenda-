@@ -1,0 +1,87 @@
+/* parte-baixo */
+
+main {
+    width: 150vh;
+    align-self: center;
+    flex: 1;
+    margin-top: 60px;
+    display: flex;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 52vh;
+    justify-content: space-between;
+}
+
+.container-form {
+    flex: 1;
+    display: flex;
+    background-color: #292929;
+    padding: 20px;
+    border-radius: 15px;
+    
+}
+
+label {
+    color: #0CBC8B;
+    font-size: 2.6vh;
+    margin-left: 1.5vh;
+}
+
+.inputs-text {
+    border: none;
+    background-color: #353535;
+    padding: 2.3vh;
+    border-radius: 3vh;
+    outline: none;
+    color: rgb(231, 231, 231);
+}
+
+.input-date {
+    border: none;
+    width: 30vh;
+    background-color: #353535;
+    color: rgba(231, 231, 231, 0.363);
+    padding: 2.3vh;
+    border-radius: 3vh;
+    outline: none;
+}
+
+.input-select {
+    background-color: #353535;
+    outline: none;
+    border: none;
+    padding: 2.3vh;
+    border-radius: 3vh;
+    color: rgba(231, 231, 231, 0.363);
+    padding-left: 3vh;
+    width: 45vh;
+}
+  
+.submit {
+    background-color: #215F4D;
+    color: #C4F8CC;
+    padding: 2.3vh;
+    border-radius: 3vh;
+    border: none;
+    width: 30vh;
+    background-image: url(imagens/maizin.svg);
+    background-size: 3.8vh auto;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 2vh) center;;
+    padding-right: 10vh;
+    cursor: pointer;
+    margin-top: 6vh;
+    align-self: center;
+    position: absolute;
+    bottom: 15vh;
+}
+
+.bloco-input {
+    display: flex;
+    flex-direction: column;
+}

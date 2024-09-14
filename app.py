@@ -56,7 +56,9 @@ def cadastro():
 @app.route("/Home")
 def home_page():
     if session.get("usuario_logado"):
-        return render_template("home.html")
+
+        atividades = Atividade.pegar_atividades()
+        return render_template("home.html", atividades=atividades)
 
     else:
         return redirect(url_for("login_page"))
@@ -73,9 +75,22 @@ def perfil():
     return "eae"
 
 
-@app.route("/Cadastro-Atividades")
+@app.route("/Cadastro-Atividades", methods=["GET", "POST"])
 def cadastro_atividades():
-    return render_template("cadastro-atividades.html")
+
+    if request.method == "POST":
+        titulo = request.form.get("titulo")
+        descricao = request.form.get("descricao")
+        data = request.form.get("data")
+        visibilidade = request.form.get("selecionarvisibilidade")
+
+        atividade1 = Atividade(titulo, descricao, data, visibilidade)
+
+        atividade1.guardar_atividade()
+        return render_template("cadastro-atividades.html")
+
+    else:
+        return render_template("cadastro-atividades.html")
 
 
 if __name__ == "__main__":

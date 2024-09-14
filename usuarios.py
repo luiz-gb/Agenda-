@@ -28,3 +28,39 @@ class Cliente:
 
         with open("usuarios.json", "w") as arquivo:
             json.dump(clientes, arquivo, indent=4)
+
+
+class Atividade:
+    def __init__(self, titulo, descricao, data, visibilidade):
+        self.titulo = titulo
+        self.descricao = descricao
+        self.data = data
+        self.visibilidade = visibilidade
+
+    def guardar_atividade(self):
+        nova_atividade = {
+            "titulo": self.titulo,
+            "descricao": self.descricao,
+            "data": self.data,
+            "visibilidade": self.visibilidade,
+        }
+
+        try:
+            with open("atividades.json", "r") as arquivo:
+                atividades = json.load(arquivo)
+        except FileNotFoundError:
+            atividades = []
+
+        atividades.append(nova_atividade)
+
+        with open("atividades.json", "w") as arquivo:
+            json.dump(atividades, arquivo, indent=4)
+
+    def pegar_atividades():
+        try:
+            with open("atividades.json", "r") as arquivo:
+                atividades = json.load(arquivo)
+        except FileNotFoundError:
+            atividades = []
+
+        return atividades

@@ -94,3 +94,6 @@ function aparecer_expanded () {
 
 
 perfil.addEventListener('click', aparecer_expanded)
+
+// Tela de urgêcias
+
