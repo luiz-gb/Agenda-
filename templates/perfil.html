@@ -1,0 +1,60 @@
+{% extends "base-navbar.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/perfil.css">
+{% endblock %}
+
+{% block body %}
+<main>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="card">
+            <p class="alert">Dados atualizados!</p>
+            <button onclick="tirar_card()">X</button>
+            <div class="barra">
+                <div class="barra2"></div>
+            </div>
+        </div>
+    {% endif %}
+    {% endwith %}
+    <div class="box">
+        <div class="cima-box">
+            <img src="/static/imagens/profile-low5.jpg" class="imagem" alt="">
+            <a href="{{url_for('perfil_edit')}}" class="edit">
+                <img src="/static/imagens/edit.svg" alt="">
+            </a>
+        </div>
+        <div class="baixo-box">
+            <div class="esquerda">
+                <div class="box-titulo boxs">
+                    <h5 class="titulos">Nome Completo</h5>
+                    <p class="campos">{{ current_user['nome'] }}</p>
+                </div>
+                <div class="box-turma boxs">
+                    <h5 class="titulos">Turma</h5>
+                    <p class="campos">{{ current_user['turma'] }}</p>
+                </div>
+                <div class="box-titulo boxs">
+                    <h5 class="titulos">Senha Atual</h5>
+                    <p class="campos">{{ senha_apresentavel }}</p>
+                </div>
+            </div>
+            <div class="direita">
+                <div class="box-email boxs">
+                    <h5 class="titulos">Email</h5>
+                    <p class="campos">{{ current_user['email'] }}</p>
+                </div>
+                <div class="box-lider boxs">
+                    <h5 class="titulos">Líder</h5>
+                    <p class="campos">{{  current_user['lider'] }}</p>
+                </div>
+                <div class="box-solteiro boxs">
+                    <h5 class="titulos">Qnt. De Atividades</h5>
+                    <p class="campos">{{ quantidade_atividades }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src= "{{ url_for('static', filename='scripts/perfil.js') }}" ></script>
+</main>
+{% endblock %}

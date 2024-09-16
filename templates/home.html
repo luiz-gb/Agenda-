@@ -29,54 +29,64 @@
 
         <div class="urgencia">
             <div class="parte-cima-urgencia">
-                <h5>Urgências da tropa</h5>
+                <h5>Urgências de atividades neste mês</h5>
                 <img src="/static/imagens/urgencia2.svg" alt="">
             </div>
 
             <div class="parte-baixo-urgencia">
-                <ul>
-                    <li class="urgencia-marrom">
-                        <img src="/static/imagens/urgenciaMARROM.svg" alt="">
-                        <p>SEII VI</p>
-                    </li>
-                    <li class="urgencia-marrom">
-                        <img src="/static/imagens/urgenciaMARROM.svg" alt="">
-                        <p>PROVA DE MATEMÁTICA</p>
-                    </li>
-                    <li class="urgencia-verde">
-                        <img src="/static/imagens/urgenciaVERDE.svg" alt="">
-                        <p>TRABALHO DE HISTÓRIA</p>
-                    </li>
-                    <li class="urgencia-verde">
-                        <img src="/static/imagens/urgenciaVERDE.svg" alt="">
-                        <p>TRABALHO DE SOÊNIA</p>
-                    </li>
-                    <li class="urgencia-verde">
-                        <img src="/static/imagens/urgenciaVERDE.svg" alt="">
-                        <p>TRABALHO DE SOÊNIA</p>
-                    </li>
-                    <li class="urgencia-verde">
-                        <img src="/static/imagens/urgenciaVERDE.svg" alt="">
-                        <p>TRABALHO DE SOÊNIA</p>
-                    </li>
-                </ul>
+                {% if lista_atividades %}
+                    {% for atividade in lista_atividades %}
+                        <ul>
+                            <li class="urgencia-marrom">
+                                <img src="/static/imagens/urgenciaVERMELHO.svg" alt="">
+                                {% if lista_atividades[atividade] == '1' %}
+                                    <p>
+                                        {{ atividade + ' em ' + lista_atividades[atividade] + ' dia' }} 
+                                    </p>
+                                {% elif lista_atividades[atividade] == '' %}
+                                    <p>
+                                        ... 
+                                    </p>
+                                {% else %}
+                                    <p>
+                                        {{ atividade + ' em ' + lista_atividades[atividade] + ' dias' }} 
+                                    </p>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    {% endfor %}
+                {% else %}
+                    <ul>
+                        <li class="urgencia-verde">
+                            <img src="/static/imagens/urgenciaVERDE.svg" alt="">
+                            <p class="mensagem-sucesso">Parabéns!!! Seus próximos dias estão livres, aproveite!! </p>
+                        </li>
+                    </ul>
+                {% endif %}
             </div>
         </div>
     </div>
+
     <div class="parte2-principal"> 
         <h5 class="titulo-parte2">AGENDA DE ATIVIDADES</h5>
         <div class="super-container">
             {% if atividades %}
-                {% for atividade in atividades %}
+                {% for data in dicionario %}
                     <div class="container-atividade">
-                        <h5>{{ atividade['data'] }}</h5>
-                        <ul>
-                            <li>{{ atividade['titulo'] }}</li>
+                        <h5>{{ data }}</h5>
+                        <ul class="lista-atividades">
+                            {% for item in dicionario[data] %}
+                                <li>
+                                    <p>{{ item['titulo'] }}</p>
+                                    <input type="checkbox">
+                                    <a href="#">ABRIR ATIVIDADE</a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 {% endfor %}
-                {% else %}
-                    <p>Você não possue atividades!!!</p>
+            {% else %}
+                <p>Você não possue atividades!!!</p>
             {% endif %}
 
         </div>

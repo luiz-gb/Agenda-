@@ -1,0 +1,98 @@
+{% extends "base-navbar.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/perfil-edit.css">
+{% endblock %}
+
+{% block body %}
+<main>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <div class="card">
+                <p class="alert">Dados atualizados!</p>
+                <button onclick="tirar_card()">X</button>
+                <div class="barra">
+                    <div class="barra2"></div>
+                </div>
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <h5 class="senha-escondida">{{ current_user['senha'] }}</h5>
+    <div class="box">
+        <div class="cima-box">
+            <div>
+                <img src="/static/imagens/profile-low5.jpg" class="imagem" alt="">
+                <!-- Label que será o gatilho para o input -->
+                <label for="input-file" class="label-input-file">
+                    <img src="/static/imagens/img-icone.svg">
+                </label>
+                <!-- O input file verdadeiro fica invisível -->
+                <input type="file" id="input-file" class="input-file">
+            </div>
+            <div class="edit">
+                <a href="{{url_for('perfil')}}" class="edit-close">
+                    <img src="/static/imagens/close.svg" alt="" class="close">
+                </a>
+                <input type="image" src="/static/imagens/confirm.svg" form="meu-formulario" class="confirm">
+            </div>
+        </div>
+        <form action="" method="post" class="baixo-box" id="meu-formulario">
+            <div class="esquerda">
+                <div class="box-titulo boxs bloco-input">
+                    <h5 class="titulos">Nome Completo</h5>
+                    <input type="text" name="input-nome" value="{{ current_user['nome'] }}" class="campos campo-input input-nome">
+                    <div class="aviso aviso-nome">
+                        <p>Senha Curta</p>
+                        <img src="/static/imagens/urgencia.svg" alt="">
+                    </div>
+                    
+                </div>
+                <div class="box-turma boxs">
+                    <h5 class="titulos">Turma</h5>
+                    <p class="campos campo-lock">
+                        {{ current_user['turma'] }}
+                        <img src="/static/imagens/lock.svg" class="img-input" alt="eae">
+                    </p>
+                    
+                </div>
+                <div class="box-titulo boxs">
+                    <h5 class="titulos">Senha Atual</h5>
+                    <p class="campos campo-lock">
+                        {{ senha_apresentavel }}
+                        <img src="/static/imagens/lock.svg" class="img-input" alt="eae">
+                    </p>
+                </div>
+            </div>
+            <div class="direita">
+                <div class="box-email boxs bloco-input">
+                    <h5 class="titulos">Email</h5>
+                    <input type="text" name="input-email" value="{{ current_user['email'] }}" class="campos campo-input input-email">
+                    <div class="aviso aviso-email">
+                        <p>Senha Curta</p>
+                        <img src="/static/imagens/urgencia.svg" alt="">
+                    </div>
+                </div>
+                <div class="box-lider boxs">
+                    <h5 class="titulos">Líder</h5>
+                    <p class="campos campo-lock">
+                        {{  current_user['lider'] }}
+                        <img src="/static/imagens/lock.svg" class="img-input" alt="eae">
+                    </p>
+                </div>
+                <div class="box-senha boxs bloco-input">
+            
+                    <h5 class="titulos">Nova senha</h5>
+                    <input type="text" name="input-senha" placeholder="Digite sua nova senha..." class="campos campo-input input-senha">
+                    <div class="aviso aviso-senha">
+                        <p>Senha Curta</p>
+                        <img src="/static/imagens/urgencia.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+<script src= "{{ url_for('static', filename='scripts/perfil-edit.js') }}" ></script>
+{% endblock %}

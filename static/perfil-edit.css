@@ -1,0 +1,170 @@
+main {
+    flex: 1;
+    width: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background-color: #292929;
+    width: 150vh;
+    padding: 5vh 7vh;
+    border-radius: 3vh;
+}
+.imagem {
+    height: auto;
+    width: 24vh;
+    margin-bottom: 3vh;
+    border-radius: 50%;
+}
+
+.baixo-box {
+    display: flex;
+    justify-content: space-between;
+    width: 115vh;
+}
+
+.titulos {
+    color: #0CBC8B;
+    font-size: 2.6vh;
+    margin-left: 2.2vh;
+}
+
+.campos {
+    border: none;
+    background-color: #353535;
+    padding: 2.3vh;
+    border-radius: 6vh;
+    outline: none;
+    color: rgb(231, 231, 231);
+    color: #787878;
+    width: 55vh;
+}
+
+.boxs {
+    margin-bottom: 1vh;
+}
+
+.cima-box {
+    position: relative;
+}
+
+.edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items:center;
+    width: 11vh;
+    justify-content: space-between;
+}
+
+.edit-close {
+    display: flex;
+    align-items: center;
+}
+
+.campo-lock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img-input {
+    width: 4vh;
+    height: auto;
+}
+
+.campo-input {
+    font-size: 2.8vh;
+}
+
+.confirm {
+    height: auto;
+    width: 5.3vh;
+}
+
+.close {
+    height: auto;
+    width: 4.5vh;
+}
+
+
+/* Estilizando botao de arquivo */
+
+.input-file {
+    position: absolute; /* Posiciona o input fora da tela */
+    left: -9999px;
+    visibility: hidden;
+    color: transparent;
+}
+
+.label-input-file {
+    display: inline-flex;
+    width: 6vh; /* Tamanho do círculo */
+    height: 6vh;
+    border-radius: 50%; /* Deixa o label redondo */
+    background-color: #353535; /* Cor de fundo */
+    cursor: pointer; /* Cursor de clique */
+    text-align: center;
+    line-height: 50px; /* Centraliza verticalmente */
+    color: transparent;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 3vh;
+    left: 17vh;
+}
+
+.label-input-file img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Avisos */
+
+.bloco-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.aviso {
+    display: none;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    padding: 2vh;
+    border: 2px solid rgb(151, 151, 151);
+    border-radius: 2.1vh;
+    font-size: 2.4vh;
+    z-index: 10;
+    opacity: 0.8;
+    color: black;
+    top: 10vh;
+    left: 2vh;
+}
+
+
+.aviso::before {
+    content: "";
+    position: absolute;
+    top: -8px; 
+    left: 84%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px; 
+    border-style: solid;
+    border-color: transparent transparent white transparent; 
+}
+
+.aviso img {
+    margin-left: 20px;
+    height: 25px;
+    width: auto;;
+}
+
+.senha-escondida {
+    display: none;
+}

@@ -20,7 +20,7 @@ function submitform (event) {
 
     if (valormatricula === '' || valorsenha === ''){
         aviso_matricula.style.display = 'flex'
-        aviso_matricula_p.innerText = 'Preencha o formulário totalmente'
+        aviso_matricula_p.innerText = 'Preencha os campos'
         tem_erro = true
     }
 
@@ -68,6 +68,6 @@ function tirar_aviso (aviso) {
     }
 }
 
-matricula.addEventListener('focus', () => tirar_aviso(aviso_matricula))
-senha.addEventListener('focus', () => tirar_aviso(aviso_senha))
+matricula.addEventListener('mouseover', () => tirar_aviso(aviso_matricula))
+senha.addEventListener('mouseover', () => tirar_aviso(aviso_senha))
 

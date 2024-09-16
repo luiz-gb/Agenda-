@@ -176,3 +176,95 @@ form {
     height: 25px;
     width: auto;
 }
+
+/* Card */
+
+.card {
+    position: absolute;
+    display: flex;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 10px;
+    background-color: rgb(231, 231, 231);
+    align-items: center;
+    justify-self: center;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 0.8;
+    box-sizing: border-box;
+}
+
+.card button {
+    margin-left: 15px;
+    border: none;
+    color: black;
+    font-size: 20px;
+    background-color: rgb(124, 124, 124);
+    padding: 2px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.barra {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: rgb(161, 161, 161);
+  
+}
+
+.barra2 {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(99, 99, 99); /* Cor da linha de progresso */
+    transform-origin: left center;
+    transition: transform 1s linear;
+
+}
+
+/* Urgência */
+
+.controle {
+    position: relative;
+}
+
+.aviso {
+    display: none;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    padding: 2vh;
+    border: 2px solid rgb(151, 151, 151);
+    border-radius: 2.1vh;
+    font-size: 2.4vh;
+    z-index: 10;
+    opacity: 0.8;
+    color: black;
+    top: 7vh;
+    left: 2vh;
+}
+
+
+.aviso::before {
+    content: "";
+    position: absolute;
+    top: -8px; 
+    left: 84%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px; 
+    border-style: solid;
+    border-color: transparent transparent white transparent; 
+}
+
+.aviso img {
+    margin-left: 20px;
+    height: 25px;
+    width: auto;;
+}

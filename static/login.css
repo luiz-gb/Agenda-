@@ -153,12 +153,6 @@ form {
     color: #a3a3a3;
 }
 
-/* Validação de formulário */
-
-.input-erro {
-    border: solid 1px rgb(153, 0, 0);
-}
-
 /* Card */
 
 .card {
@@ -167,7 +161,7 @@ form {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     padding: 10px;
-    background-color: #0CBC8B;
+    background-color: rgb(231, 231, 231);
     align-items: center;
     justify-self: center;
     left: 50%;
@@ -176,6 +170,9 @@ form {
     font-weight: bold;
     font-size: 20px;
     opacity: 0.8;
+    box-sizing: border-box;
+    z-index: 20;
+    color: rgb(51, 51, 51);
 }
 
 .card button {
@@ -183,7 +180,9 @@ form {
     border: none;
     color: black;
     font-size: 20px;
-    background-color: #0CBC8B;
+
+    padding: 2px 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
     font-size: 25px;
@@ -195,14 +194,14 @@ form {
     left: 0;
     height: 5px;
     width: 100%;
-    background-color: #0CBC8B;
+    background-color: rgb(161, 161, 161);
   
 }
 
 .barra2 {
     height: 100%;
     width: 100%;
-    background-color: #046b4e; /* Cor da linha de progresso */
+    background-color: rgb(99, 99, 99); /* Cor da linha de progresso */
     transform-origin: left center;
     transition: transform 1s linear;
 
@@ -219,14 +218,15 @@ form {
     align-items: center;
     position: absolute;
     background-color: white;
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 10px;
-    top: 38px;
-    font-size: 14px;
-    left: 10px;
+    padding: 2vh;
+    border: 2px solid rgb(151, 151, 151);
+    border-radius: 2.1vh;
+    font-size: 2.4vh;
     z-index: 10;
     opacity: 0.8;
+    color: black;
+    top: 7vh;
+    left: 2vh;
 }
 
 

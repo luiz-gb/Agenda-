@@ -1,5 +1,14 @@
 /* parte-baixo */
 
+body {
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 90vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 main {
     width: 150vh;
     align-self: center;
@@ -81,7 +90,48 @@ label {
     bottom: 15vh;
 }
 
+/* Avisos */
+
 .bloco-input {
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.aviso {
+    display: none;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    padding: 2vh;
+    border: 2px solid rgb(151, 151, 151);
+    border-radius: 2.1vh;
+    font-size: 2.4vh;
+    z-index: 10;
+    opacity: 0.8;
+    color: black;
+    top: 10vh;
+    left: 2vh;
+}
+
+
+.aviso::before {
+    content: "";
+    position: absolute;
+    top: -8px; 
+    left: 84%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px; 
+    border-style: solid;
+    border-color: transparent transparent white transparent; 
+}
+
+.aviso img {
+    margin-left: 20px;
+    height: 25px;
+    width: auto;;
+}
+
+.aviso-date {
+    left: -6vh;
 }

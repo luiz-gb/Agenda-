@@ -1,0 +1,112 @@
+main {
+    flex: 1;
+    width: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background-color: #292929;
+    width: 150vh;
+    padding: 5vh 7vh;
+    border-radius: 3vh;
+}
+.imagem {
+    height: auto;
+    width: 24vh;
+    margin-bottom: 3vh;
+    border-radius: 50%;
+}
+
+.baixo-box {
+    display: flex;
+    justify-content: space-between;
+    width: 115vh;
+}
+
+.titulos {
+    color: #0CBC8B;
+    font-size: 2.6vh;
+    margin-left: 2.2vh;
+}
+
+.campos {
+    border: none;
+    background-color: #353535;
+    padding: 2.3vh;
+    border-radius: 6vh;
+    outline: none;
+    color: rgb(231, 231, 231);
+    color: #787878;
+    width: 55vh;
+}
+
+.boxs {
+    margin-bottom: 1vh;
+}
+
+.cima-box {
+    position: relative;
+}
+
+.edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Card */
+
+.card {
+    position: absolute;
+    display: flex;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 10px;
+    background-color: rgb(231, 231, 231);
+    align-items: center;
+    justify-self: center;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 0.8;
+    box-sizing: border-box;
+    z-index: 20;
+    color: rgb(51, 51, 51);
+}
+
+.card button {
+    margin-left: 15px;
+    border: none;
+    color: black;
+    font-size: 20px;
+
+    padding: 2px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.barra {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: rgb(161, 161, 161);
+  
+}
+
+.barra2 {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(99, 99, 99); /* Cor da linha de progresso */
+    transform-origin: left center;
+    transition: transform 1s linear;
+
+}

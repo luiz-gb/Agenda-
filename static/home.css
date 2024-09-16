@@ -1,21 +1,3 @@
-/* Reset geral e configuração da fonte */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background-color: #121212;
-    color: #ffffff;
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Navbar */
 .navbar {
     display: flex;
     align-items: center;
@@ -24,61 +6,7 @@ body {
     background-color: #1F1F1F;
     height: 60px;
     width: 100%;
-}
-
-.navbar-logo img {
-    height: 40px;
-    width: 40px;
-}
-
-.navbar-search {
-    flex: 1;
-    margin: 0 20px;
-    position: relative;
-    max-width: 40px;
-    transition: max-width 0.5s ease;
-}
-
-.navbar-search input {
-    width: 100%;
-    padding: 10px 40px 10px 15px;
-    border-radius: 20px;
-    border: none;
-    outline: none;
-    background-color: #333;
-    color: #ffffff;
-    box-sizing: border-box;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-}
-
-.navbar-search img {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 20px;
-    width: 20px;
-    cursor: pointer;
-}
-
-.navbar-profile img {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-/* Estilo quando o campo de busca está ativo */
-.navbar-search.active {
-    max-width: 300px;
-}
-
-.navbar-search.active input {
-    opacity: 1;
-    pointer-events: auto;
+    position: fixed;
 }
 
 /* Container do calendário */
@@ -155,7 +83,7 @@ body {
 /* urgências */
 
 .principal {
-    margin-top: 50px;
+    margin-top: 100px;
     width: 70%;
     align-self: center;
     display: flex;
@@ -179,7 +107,7 @@ body {
     align-items: center;
     width: 100%;
     justify-content: space-between;
-    background-color: #B65118;
+    background-color: #811414;
     padding: 3px;
     padding-left: 20px;
     border-radius: 8px;
@@ -218,11 +146,13 @@ body {
 }
 
 .urgencia-marrom p {
-    color: #B65118;
+    color: #a78888;
+    font-weight: 900;
 }
 
 .urgencia-verde p {
     color: #0CBC8B;
+    font-weight: 900;
 }
 
 .parte-baixo-urgencia img {
@@ -290,6 +220,31 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 70px;
+    max-height: 50vh;
+    overflow-y: auto;  /* Habilita o scroll vertical caso o conteúdo exceda o max-height */
+    border-bottom: 2px solid #242424;
+}
+
+/* Personaliza a barra de rolagem (para navegadores WebKit) */
+.super-container::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+/* Estilo da parte do "trilho" da scrollbar */
+.super-container::-webkit-scrollbar-track {
+    background: #242424; /* Cor de fundo do trilho */
+    border-radius: 2px; /* Bordas arredondadas do trilho */
+}
+
+/* Estilo da parte "deslizante" da scrollbar */
+.super-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor da barra de rolagem */
+    border-radius: 2px;    /* Bordas arredondadas da barra */
+}
+
+/* Estilo da barra de rolagem ao passar o mouse */
+.super-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Cor da barra de rolagem ao passar o mouse */
 }
 
 .container-atividade {
@@ -301,6 +256,34 @@ body {
     background-color: #353535;
     border-radius: 10px;
     padding: 15px;
+}
+
+.lista-atividades li {
+    display: flex;
+}
+
+.lista-atividades p {
+    color: #0CBC8B;
+    font-weight: bold;
+}
+
+.lista-atividades input {
+    margin-left: 5px;
+    height: auto;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+.lista-atividades a {
+    color: #D9D9D9;
+    font-style: none;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.lista-atividades a:hover {
+    text-decoration: underline;
 }
 
 .botao-atividade {

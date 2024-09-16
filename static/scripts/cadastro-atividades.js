@@ -1,41 +1,52 @@
-const searchIcon = document.getElementById('search-icon');
-        const searchContainer = document.querySelector('.navbar-search');
+const formulario = document.querySelector('form')
+const titulo = document.querySelector('.input-titulo')
+const data = document.querySelector('.input-date')
 
-        searchIcon.addEventListener('click', function() {
-            searchContainer.classList.toggle('active');
-            if (searchContainer.classList.contains('active')) {
-                searchContainer.querySelector('input').focus();
-            }
-        });
+const aviso_titulo = document.querySelector('.aviso-titulo')
+const aviso_titulo_p = document.querySelector('.aviso-titulo p')
+const aviso_data = document.querySelector('.aviso-date')
+const aviso_data_p = document.querySelector('.aviso-date p')
+const avisos = document.querySelectorAll('.aviso')
+const inputs = document.querySelectorAll('.inputs')
 
-        document.addEventListener('click', function(e) {
-            if (!searchContainer.contains(e.target) && !searchIcon.contains(e.target)) {
-                searchContainer.classList.remove('active');
-            }
-        });
+function submitform (event) {
+    event.preventDefault()
 
-// profile
+    const valortitulo = titulo.value.trim()
+    const valordata = data.value.trim()
 
-const perfil = document.querySelector('.navbar-profile')
-const expanded = document.querySelector('.perfil-expanded')
+    let tem_erro = false
 
-function aparecer_expanded () {
-    if (expanded.style.display === 'inline-block') {
-        expanded.style.display = 'none'
+    if (valortitulo === ''){
+        aviso_titulo.style.display = 'flex'
+        aviso_titulo_p.innerText = 'Preencha o campo'
+        tem_erro = true
+    }
+
+    else if (valordata === ''){
+        console.log('oi')
+        aviso_data.style.display = 'flex'
+        aviso_data_p.innerText = 'Preencha o campo'
+        tem_erro = true
+    }
+
+    if (tem_erro) {
+        console.log('Envio não concluído!')
     }
     else {
-        expanded.style.display = 'inline-block'
+        formulario.submit()
     }
 }
 
-//calendario
+formulario.addEventListener('submit', submitform)
 
-perfil.addEventListener('click', aparecer_expanded)
+// tirat os avisos ao clicar no input
 
-document.addEventListener('DOMContentLoaded', function() {
-    flatpickr(".input-date", {
-        inline: true,  // Mantém o calendário sempre visível
-        dateFormat: "Y-m-d", // Formato da data
-        locale: "pt",  // Define o idioma para português
-    });
-});
+function tirar_aviso (aviso) {
+    if (aviso.style.display === 'flex') {
+        aviso.style.display = 'none'
+    }
+}
+
+titulo.addEventListener('mouseover', () => tirar_aviso(aviso_titulo))
+data.addEventListener('mouseover', () => tirar_aviso(aviso_data))

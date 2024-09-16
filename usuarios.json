@@ -1,9 +1,18 @@
 [
     {
-        "nome": "Luiz Miguel",
+        "nome": "Luiz Miguel ",
         "matricula": "202214610039",
         "email": "glogloglogloglo1010@gmail.com",
         "senha": "1307",
-        "turma": "3\u00ba de Inform\u00e1tica"
+        "turma": "3\u00ba de Inform\u00e1tica",
+        "lider": "Sim"
+    },
+    {
+        "nome": "Roberto Bobio",
+        "matricula": "202214610001",
+        "email": "glogloglogloglo1010@gmail.com",
+        "senha": "1307",
+        "turma": "3\u00ba de Inform\u00e1tica",
+        "lider": "Sim"
     }
 ]

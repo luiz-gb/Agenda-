@@ -11,6 +11,19 @@
     <header>
         <img class="logo" src="/static/imagens/ifpb2.png" alt="jae">
     </header>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <div class="card">
+                <p class="alert">Usuário cadastrado! </p>
+                <button onclick="tirar_card()">X</button>
+                <div class="barra">
+                    <div class="barra2"></div>
+                </div>
+            </div>
+        {% endif %}
+    {% endwith %}
+
     <main>
         <form method="post">
             <h5 class="titulo-form">Cadastre-se</h5>
