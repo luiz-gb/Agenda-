@@ -14,5 +14,13 @@
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "Sim"
+    },
+    {
+        "nome": "Roberto",
+        "matricula": "123456",
+        "email": "junior@gmail.com",
+        "senha": "1307",
+        "turma": "1\u00ba de Inform\u00e1tica A",
+        "lider": "Sim"
     }
 ]

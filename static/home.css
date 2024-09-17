@@ -107,7 +107,7 @@
     align-items: center;
     width: 100%;
     justify-content: space-between;
-    background-color: #811414;
+    background-color: #B65118;
     padding: 3px;
     padding-left: 20px;
     border-radius: 8px;
@@ -146,7 +146,7 @@
 }
 
 .urgencia-marrom p {
-    color: #a78888;
+    color: #B65118;
     font-weight: 900;
 }
 
@@ -222,7 +222,6 @@
     margin-bottom: 70px;
     max-height: 50vh;
     overflow-y: auto;  /* Habilita o scroll vertical caso o conteúdo exceda o max-height */
-    border-bottom: 2px solid #242424;
 }
 
 /* Personaliza a barra de rolagem (para navegadores WebKit) */
@@ -298,6 +297,7 @@
     align-self: center;
     position: absolute;
     bottom: 30px;
+    align-items: center;
 }
 
 .botao-atividade img {

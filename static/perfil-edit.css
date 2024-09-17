@@ -41,6 +41,7 @@ main {
     color: rgb(231, 231, 231);
     color: #787878;
     width: 55vh;
+    font-size: 2.8vh;
 }
 
 .boxs {
@@ -75,10 +76,6 @@ main {
 .img-input {
     width: 4vh;
     height: auto;
-}
-
-.campo-input {
-    font-size: 2.8vh;
 }
 
 .confirm {

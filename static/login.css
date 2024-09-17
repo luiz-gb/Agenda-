@@ -99,7 +99,7 @@ form {
     color: rgb(231, 231, 231) !important;
     background-repeat: no-repeat !important;
     background-position: 20px center !important;
-    padding-left: 60px !important;
+    padding-left: 10vh !important;
     box-sizing: border-box;
     width: 100% !important;
     height: 3vh;

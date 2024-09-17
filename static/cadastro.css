@@ -100,6 +100,7 @@ form {
     background-position: 20px center;
     padding-left: 60px;
     width: 100%;
+    font-size: 2vh;
 }
 
 .botao-submit {
@@ -195,6 +196,8 @@ form {
     font-size: 20px;
     opacity: 0.8;
     box-sizing: border-box;
+    z-index: 20;
+    color: rgb(51, 51, 51);
 }
 
 .card button {
@@ -202,7 +205,7 @@ form {
     border: none;
     color: black;
     font-size: 20px;
-    background-color: rgb(124, 124, 124);
+
     padding: 2px 8px;
     border-radius: 10px;
     cursor: pointer;

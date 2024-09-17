@@ -37,22 +37,41 @@
                 {% if lista_atividades %}
                     {% for atividade in lista_atividades %}
                         <ul>
-                            <li class="urgencia-marrom">
-                                <img src="/static/imagens/urgenciaVERMELHO.svg" alt="">
-                                {% if lista_atividades[atividade] == '1' %}
-                                    <p>
-                                        {{ atividade + ' em ' + lista_atividades[atividade] + ' dia' }} 
-                                    </p>
-                                {% elif lista_atividades[atividade] == '' %}
-                                    <p>
-                                        ... 
-                                    </p>
-                                {% else %}
-                                    <p>
-                                        {{ atividade + ' em ' + lista_atividades[atividade] + ' dias' }} 
-                                    </p>
-                                {% endif %}
-                            </li>
+                            {% if lista_atividades[atividade] == '0' or lista_atividades[atividade] == '1' or lista_atividades[atividade] == '2' or lista_atividades[atividade] == '3' %}
+                                <li class="urgencia-marrom">
+                                    <img src="/static/imagens/urgenciaMARROM.svg" alt="">
+                                    {% if lista_atividades[atividade] == '1' %}
+                                        <p>
+                                            {{ atividade + ' em ' + lista_atividades[atividade] + ' dia' }} 
+                                        </p>
+                                    {% elif lista_atividades[atividade] == '0' %}
+                                        <p>
+                                            {{ atividade + ' hoje'}} 
+                                        </p>
+                                    {% else %}
+                                        <p>
+                                            {{ atividade + ' em ' + lista_atividades[atividade] + ' dias' }} 
+                                        </p>
+                                    {% endif %}
+                                </li>
+                            
+                            {% else %}
+                                
+                                <ul>
+                                    <li class="urgencia-verde">
+                                        <img src="/static/imagens/urgenciaVERDE.svg" alt="">
+                                        {% if lista_atividades[atividade] == '' %}
+                                        <p>
+                                            ... 
+                                        </p>
+                                        {% else %}
+                                            <p>
+                                                {{ atividade + ' em ' + lista_atividades[atividade] + ' dias' }} 
+                                            </p>
+                                        {% endif %}
+                                    </li>
+                                </ul>
+                            {% endif %}
                         </ul>
                     {% endfor %}
                 {% else %}
@@ -70,7 +89,7 @@
     <div class="parte2-principal"> 
         <h5 class="titulo-parte2">AGENDA DE ATIVIDADES</h5>
         <div class="super-container">
-            {% if atividades %}
+            {% if dicionario %}
                 {% for data in dicionario %}
                     <div class="container-atividade">
                         <h5>{{ data }}</h5>

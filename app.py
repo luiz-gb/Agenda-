@@ -68,16 +68,16 @@ def home_page():
 
         # filtrando as atividades por data
         for atividade in atividades:
-            data_atividade = atividade["data"]
+            if atividade["criador"] == usuario_logado:
+                data_atividade = atividade["data"]
 
-            if data_atividade not in dicionario:
-                dicionario[data_atividade] = [atividade]
+                if data_atividade not in dicionario:
+                    dicionario[data_atividade] = [atividade]
+                else:
+                    dicionario[data_atividade].append(atividade)
             else:
-                dicionario[data_atividade].append(atividade)
-
+                pass
         # pegando as atividades e tempo que falta para elas chegarem
-
-        atividades = Atividade.pegar_atividades()
 
         data_de_hoje = datetime.now()
 
@@ -91,6 +91,7 @@ def home_page():
 
             if atividade["criador"] == usuario_logado:
                 data_atividade = atividade["data"]
+                print("oi")
 
                 dia_atividade = int(data_atividade[:2])
                 mes_atividade = int(data_atividade[3:5])
@@ -101,8 +102,9 @@ def home_page():
 
                     lista_atividades_dias.append((atividade["titulo"], tempo_falta))
 
-        # organiza pelas atividades com menos dias
-        lista_atividades_dias.sort(key=lambda x: x[1])
+        if lista_atividades_dias:
+            # organiza pelas atividades com menos dias
+            lista_atividades_dias.sort(key=lambda x: x[1])
 
         # lista final
         lista_atividades = {}
