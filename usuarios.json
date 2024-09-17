@@ -14,7 +14,8 @@
         "email": "glogloglogloglo1010@gmail.com",
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
-        "lider": "Sim"
+        "lider": "Sim",
+        "foto-perfil": "240_F_368881299_zuSAOtaJgtj3XLAS0aHNm6tkNh8WSohH0cff345a16460948.jpg"
     },
     {
         "nome": "Victor Augusto Gomes de Souza",
@@ -22,7 +23,8 @@
         "email": "victorraugusto1@gmail.com",
         "senha": "2f8a0f8139A#",
         "turma": "3\u00ba de Inform\u00e1tica",
-        "lider": "Sim"
+        "lider": "Sim",
+        "foto-perfil": ""
     },
     {
         "nome": "guilherme",
@@ -30,7 +32,8 @@
         "email": "guilherminho@gmail.com",
         "senha": "guizin",
         "turma": "3\u00ba de Inform\u00e1tica",
-        "lider": "Sim"
+        "lider": "Sim",
+        "foto-perfil": ""
     },
     {
         "nome": "Junior Feitosa Filho Mel",
@@ -39,6 +42,33 @@
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "Sim",
-        "foto-perfil": "240_F_368881299_zuSAOtaJgtj3XLAS0aHNm6tkNh8WSohH0cff345a16460948.jpg"
+        "foto-perfil": ""
+    },
+    {
+        "nome": "Robetinho",
+        "matricula": "202214610038",
+        "email": "luiz@gmail.com",
+        "senha": "1307",
+        "turma": "3\u00ba de Inform\u00e1tica",
+        "lider": "Sim",
+        "foto-perfil": ""
+    },
+    {
+        "nome": "Adalberto",
+        "matricula": "202214610031",
+        "email": "glo@gmail.com",
+        "senha": "1307",
+        "turma": "1\u00ba de Meio Ambiente A",
+        "lider": "Sim",
+        "foto-perfil": ""
+    },
+    {
+        "nome": "Adal Junios",
+        "matricula": "202214610040",
+        "email": "glogloglogloglo1010@gmail.com",
+        "senha": "1307",
+        "turma": "3\u00ba de Inform\u00e1tica",
+        "lider": "Sim",
+        "foto-perfil": "312245310_2030620787131767_403086996710218371_naecbd85049ecc2b8.jpg"
     }
 ]
