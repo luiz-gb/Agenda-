@@ -16,11 +16,19 @@
         "lider": "Sim"
     },
     {
-        "nome": "Roberto",
-        "matricula": "123456",
-        "email": "junior@gmail.com",
-        "senha": "1307",
-        "turma": "1\u00ba de Inform\u00e1tica A",
+        "nome": "Victor Augusto Gomes de Souza",
+        "matricula": "202214610046",
+        "email": "victorraugusto1@gmail.com",
+        "senha": "2f8a0f8139A#",
+        "turma": "3\u00ba de Inform\u00e1tica",
+        "lider": "Sim"
+    },
+    {
+        "nome": "guilherme",
+        "matricula": "202214610069",
+        "email": "guilherminho@gmail.com",
+        "senha": "guizin",
+        "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "Sim"
     }
 ]
