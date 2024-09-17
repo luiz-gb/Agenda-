@@ -115,6 +115,10 @@ main {
     left: 17vh;
 }
 
+.bloco-imagem {
+    position: relative;
+}
+
 .label-input-file img {
     width: 24px;
     height: 24px;
@@ -164,4 +168,10 @@ main {
 
 .senha-escondida {
     display: none;
+}
+
+.aviso-file {
+    top: -4vh;
+    left: -6vh;
+
 }

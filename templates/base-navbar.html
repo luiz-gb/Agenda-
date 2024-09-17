@@ -20,7 +20,11 @@
             <img src="/static/imagens/lupa.png" alt="Lupa" id="search-icon">
         </div>
         <div class="navbar-profile">
-            <img src="/static/imagens/profile-low5.jpg" alt="Profile">
+            {% if current_user['foto-perfil'] %}
+                <img src="/static/fotos_perfil/{{ current_user['foto-perfil'] }}" alt="">
+            {% else %}
+                <img src="/static/imagens/profile-low5.jpg" alt="Profile">
+            {% endif %}
         </div>
 
         <div class="perfil-expanded">

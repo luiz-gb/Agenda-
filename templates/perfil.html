@@ -19,7 +19,11 @@
     {% endwith %}
     <div class="box">
         <div class="cima-box">
-            <img src="/static/imagens/profile-low5.jpg" class="imagem" alt="">
+            {% if current_user['foto-perfil'] %}
+                <img src="/static/fotos_perfil/{{ current_user['foto-perfil'] }}" class="imagem" alt="">
+            {% else %}
+                <img src="/static/imagens/profile-low5.jpg" class="imagem" alt="">
+            {% endif %}
             <a href="{{url_for('perfil_edit')}}" class="edit">
                 <img src="/static/imagens/edit.svg" alt="">
             </a>

@@ -3,6 +3,11 @@ from usuarios import *
 import json
 from datetime import datetime
 
+# img
+from secrets import token_hex
+from PIL import Image
+import os
+
 
 app = Flask(__name__)
 app.secret_key = "NSNS2UQ8Q6FDQ6FSBA6"
@@ -46,7 +51,7 @@ def cadastro():
         senha = request.form.get("senha")
         turma = request.form.get("selecionarturma")
 
-        cliente1 = Cliente(nome, matricula, email, senha, turma, "Sim")
+        cliente1 = Cliente(nome, matricula, email, senha, turma, "Sim", "")
 
         cliente1.guardar_usuario()
 
@@ -60,6 +65,18 @@ def cadastro():
 @app.route("/Home")
 def home_page():
     if session.get("usuario_logado"):
+
+        # pegando o current
+        usuarios = Cliente.pegar_usuarios()
+        usuario_logado = session.get("usuario_logado")
+        current_user = None
+
+        # pegando usuário logado para enviar informações pra tela de login
+        for usuario in usuarios:
+            if usuario["matricula"] == usuario_logado:
+                current_user = usuario
+            else:
+                pass
 
         usuario_logado = session.get("usuario_logado")
         atividades = Atividade.pegar_atividades()
@@ -97,7 +114,11 @@ def home_page():
                 mes_atividade = int(data_atividade[3:5])
                 ano_atividade = int(data_atividade[6:])
 
-                if ano_atividade == ano_atual and mes_atividade == mes_atual:
+                if (
+                    ano_atividade == ano_atual
+                    and mes_atividade == mes_atual
+                    and dia_atividade >= dia_atual
+                ):
                     tempo_falta = int(dia_atividade) - int(dia_atual)
 
                     lista_atividades_dias.append((atividade["titulo"], tempo_falta))
@@ -121,6 +142,7 @@ def home_page():
             usuario_logado=usuario_logado,
             dicionario=dicionario,
             lista_atividades=lista_atividades,
+            current_user=current_user,
         )
 
     else:
@@ -180,6 +202,7 @@ def perfil_edit():
             nome = request.form.get("input-nome")
             email = request.form.get("input-email")
             nova_senha = request.form.get("input-senha")
+            img = request.files["input-file"]
 
             users = Cliente.pegar_usuarios()
             for user in users:
@@ -188,6 +211,9 @@ def perfil_edit():
                     user["email"] = email
                     if nova_senha:
                         user["senha"] = nova_senha
+                    if img:
+                        nome_arquivo = salvar_imagem(img)
+                        user["foto-perfil"] = nome_arquivo
                 else:
                     pass
 
@@ -260,10 +286,47 @@ def cadastro_atividades():
             return render_template("cadastro-atividades.html")
 
         else:
-            return render_template("cadastro-atividades.html")
+            # pegando o current
+            usuarios = Cliente.pegar_usuarios()
+            usuario_logado = session.get("usuario_logado")
+            current_user = None
+
+            # pegando usuário logado para enviar informações pra tela de login
+            for usuario in usuarios:
+                if usuario["matricula"] == usuario_logado:
+                    current_user = usuario
+                else:
+                    pass
+            return render_template(
+                "cadastro-atividades.html", current_user=current_user
+            )
 
     else:
         redirect(url_for("login_page"))
+
+
+def salvar_imagem(imagem):
+    codigo = token_hex(8)
+    nome, extensao = os.path.splitext(imagem.filename)
+    nome_arquivo = nome + codigo + extensao
+    caminho = os.path.join(app.root_path, "static/fotos_perfil", nome_arquivo)
+
+    imagem_original = Image.open(imagem)
+
+    largura, altura = imagem_original.size
+    if largura > altura:
+        diferenca = (largura - altura) // 2
+        box = (diferenca, 0, largura - diferenca, altura)
+    else:
+        diferenca = (altura - largura) // 2
+        box = (0, diferenca, largura, altura - diferenca)
+
+    imagem_quadrada = imagem_original.crop(box)
+    tamanho = (200, 200)
+    imagem_quadrada.thumbnail(tamanho)
+    imagem_quadrada.save(caminho)
+
+    return nome_arquivo
 
 
 if __name__ == "__main__":

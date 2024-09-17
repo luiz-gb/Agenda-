@@ -1,11 +1,12 @@
 [
     {
-        "nome": "Luiz Miguel ",
+        "nome": "Luiz Miguel Gomes Borges",
         "matricula": "202214610039",
         "email": "luizmiguelgb@gmail.com",
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
-        "lider": "Sim"
+        "lider": "Sim",
+        "foto-perfil": "321235457_918163099553044_5119720886840189251_n0eab078d41b5c95e.jpg"
     },
     {
         "nome": "Roberto Bobio",
@@ -22,5 +23,14 @@
         "senha": "1307",
         "turma": "1\u00ba de Inform\u00e1tica A",
         "lider": "Sim"
+    },
+    {
+        "nome": "Junior Feitosa Filho Mel",
+        "matricula": "202214610010",
+        "email": "luizmiguelgb@gmail.com",
+        "senha": "1307",
+        "turma": "3\u00ba de Inform\u00e1tica",
+        "lider": "Sim",
+        "foto-perfil": "240_F_368881299_zuSAOtaJgtj3XLAS0aHNm6tkNh8WSohH0cff345a16460948.jpg"
     }
 ]

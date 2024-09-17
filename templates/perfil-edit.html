@@ -22,13 +22,24 @@
     <div class="box">
         <div class="cima-box">
             <div>
-                <img src="/static/imagens/profile-low5.jpg" class="imagem" alt="">
-                <!-- Label que será o gatilho para o input -->
-                <label for="input-file" class="label-input-file">
-                    <img src="/static/imagens/img-icone.svg">
-                </label>
-                <!-- O input file verdadeiro fica invisível -->
-                <input type="file" id="input-file" class="input-file">
+                {% if current_user['foto-perfil'] %}
+                    <img src="/static/fotos_perfil/{{ current_user['foto-perfil'] }}" class="imagem" alt="">
+                {% else %}
+                    <img src="/static/imagens/profile-low5.jpg" class="imagem" alt="">
+                {% endif %}
+
+                <div class="bloco-imagem">
+                    <!-- Label que será o gatilho para o input -->
+                    <label for="input-file" class="label-input-file">
+                        <img src="/static/imagens/img-icone.svg">
+                    </label>
+                    <!-- O input file verdadeiro fica invisível -->
+                    <input type="file" id="input-file" class="input-file" name="input-file" form="meu-formulario">
+                    <div class="aviso aviso-file">
+                        <p>Senha Curta</p>
+                        <img src="/static/imagens/urgencia.svg" alt="">
+                    </div>
+                </div>
             </div>
             <div class="edit">
                 <a href="{{url_for('perfil')}}" class="edit-close">
@@ -37,7 +48,7 @@
                 <input type="image" src="/static/imagens/confirm.svg" form="meu-formulario" class="confirm">
             </div>
         </div>
-        <form action="" method="post" class="baixo-box" id="meu-formulario">
+        <form action="" method="post" class="baixo-box" id="meu-formulario" enctype="multipart/form-data">
             <div class="esquerda">
                 <div class="box-titulo boxs bloco-input">
                     <h5 class="titulos">Nome Completo</h5>

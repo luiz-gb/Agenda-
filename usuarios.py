@@ -2,13 +2,14 @@ import json
 
 
 class Cliente:
-    def __init__(self, nome, cpf, email, senha, turma, lider):
+    def __init__(self, nome, cpf, email, senha, turma, lider, foto_perfil):
         self.nome = nome
         self.cpf = cpf
         self.email = email
         self.senha = senha
         self.turma = turma
         self.lider = lider
+        self.foto_perfil = None
 
     def guardar_usuario(self):
         novo_usuario = {
@@ -18,6 +19,7 @@ class Cliente:
             "senha": self.senha,
             "turma": self.turma,
             "lider": self.lider,
+            "foto-perfil": "",
         }
 
         try:
