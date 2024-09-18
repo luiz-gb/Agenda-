@@ -78,7 +78,7 @@ function submitform (event) {
     }
 
     
-    else if (extensaofile !== 'jpg' && extensaofile !== 'png' && extensaofile !== '') {
+    else if (extensaofile !== 'jpg' && extensaofile !== 'png' && extensaofile !== 'jpeg' && extensaofile !== '' && extensaofile !== 'PNG' && extensaofile !== 'JPG') {
         aviso_file.style.display = 'flex'
         aviso_file_p.innerText = 'Arquivo inválido!'
         tem_erro = true
