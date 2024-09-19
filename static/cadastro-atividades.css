@@ -30,9 +30,8 @@ form {
     flex: 1;
     display: flex;
     background-color: #292929;
-    padding: 20px;
-    border-radius: 15px;
-    
+    padding: 5vh;
+    border-radius: 2.8vh;
 }
 
 label {
@@ -134,4 +133,8 @@ label {
 
 .aviso-date {
     left: -6vh;
+}
+
+.inputs {
+    font-size: 2.8vh;
 }
