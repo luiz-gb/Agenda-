@@ -297,6 +297,18 @@ def cadastro_atividades():
                 else:
                     pass
 
+            # pegando o current
+            usuarios = Cliente.pegar_usuarios()
+            usuario_logado = session.get("usuario_logado")
+            current_user = None
+
+            # pegando usuário logado para enviar informações pra tela de login
+            for usuario in usuarios:
+                if usuario["matricula"] == usuario_logado:
+                    current_user = usuario
+                else:
+                    pass
+
             titulo = request.form.get("titulo")
             descricao = request.form.get("descricao")
             data = request.form.get("data")
@@ -317,7 +329,9 @@ def cadastro_atividades():
 
             atividade1.guardar_atividade()
             return render_template(
-                "cadastro-atividades.html", current_user=current_user
+                "cadastro-atividades.html",
+                current_user=current_user,
+                current_user=current_user,
             )
 
         else:
