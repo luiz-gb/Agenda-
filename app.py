@@ -12,6 +12,18 @@ import os
 app = Flask(__name__)
 app.secret_key = "NSNS2UQ8Q6FDQ6FSBA6"
 
+lideres = {
+    "3º de Informática": 202214610020,
+    "2º de Informática A": 202314610040,
+    "2º de Informática B": 202314610012,
+    "2º de de Meio Ambiente A": 202314710020,
+    "2º de de Meio Ambiente B": 202314710019,
+    "1º de Informática A": 202414610033,
+    "1º de Informática B": 202414610080,
+    "1º de Meio Ambiente A": 202414710015,
+    "1º de Meio Ambiente B": 202414710068,
+}
+
 
 @app.route("/Login", methods=["GET", "POST"])
 def login_page():
@@ -51,7 +63,16 @@ def cadastro():
         senha = request.form.get("senha")
         turma = request.form.get("selecionarturma")
 
-        cliente1 = Cliente(nome, matricula, email, senha, turma, "Sim", "")
+        lider = False
+        for turmas in lideres:
+            if lideres[turmas] == matricula:
+                lider = True
+
+        if lider:
+
+            cliente1 = Cliente(nome, matricula, email, senha, turma, "s", "")
+        else:
+            cliente1 = Cliente(nome, matricula, email, senha, turma, "n", "")
 
         cliente1.guardar_usuario()
 
@@ -264,6 +285,18 @@ def cadastro_atividades():
 
     if session.get("usuario_logado"):
         if request.method == "POST":
+            # pegando o current
+            usuarios = Cliente.pegar_usuarios()
+            usuario_logado = session.get("usuario_logado")
+            current_user = None
+
+            # pegando usuário logado para enviar informações pra tela de login
+            for usuario in usuarios:
+                if usuario["matricula"] == usuario_logado:
+                    current_user = usuario
+                else:
+                    pass
+
             titulo = request.form.get("titulo")
             descricao = request.form.get("descricao")
             data = request.form.get("data")
@@ -283,7 +316,9 @@ def cadastro_atividades():
             )
 
             atividade1.guardar_atividade()
-            return render_template("cadastro-atividades.html")
+            return render_template(
+                "cadastro-atividades.html", current_user=current_user
+            )
 
         else:
             # pegando o current

@@ -31,13 +31,23 @@
                     </div>
                 </div>
 
-                <div class="bloco-input">
-                    <label for="selecionarvisibilidade">Selecione a visibilidade</label>
-                    <select placeholder="Selecionar visibilidade" name="selecionarvisibilidade" class="input-select inputs">
-                        <option>Privado</option>
-                        <option>Púlico</option>
-                    </select>
-                </div>
+                {% if current_user['lider'] == 's' %}
+                    <div class="bloco-input">
+                        <label for="selecionarvisibilidade">Selecione a visibilidade</label>
+                        <select placeholder="Selecionar visibilidade" name="selecionarvisibilidade" class="input-select inputs">
+                            <option>Privado</option>
+                            <option>Púlico</option>
+                        </select>
+                    </div>
+                {% else %}
+                    <div class="bloco-input">
+                        <label for="selecionarvisibilidade">Selecione a visibilidade</label>
+                        <div class="input-select inputs div-select">
+                            <p>Privado</p>
+                            <img src="/static/imagens/lock.svg" alt="">
+                        </div>
+                    </div>
+                {% endif %}
 
                 <input type="submit" value="Adicionar" name="submit-atividades inputs" class="submit">
 

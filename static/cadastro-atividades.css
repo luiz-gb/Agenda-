@@ -13,7 +13,7 @@ main {
     width: 150vh;
     align-self: center;
     flex: 1;
-    margin-top: 60px;
+    margin-top: 10vh;
     display: flex;
 }
 
@@ -30,8 +30,8 @@ form {
     flex: 1;
     display: flex;
     background-color: #292929;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 3.4vh;
+    border-radius: 2.5vh;
     
 }
 
@@ -48,6 +48,7 @@ label {
     border-radius: 3vh;
     outline: none;
     color: rgb(231, 231, 231);
+    font-size: 2.3vh;
 }
 
 .input-date {
@@ -58,6 +59,7 @@ label {
     padding: 2.3vh;
     border-radius: 3vh;
     outline: none;
+    font-size: 2.3vh;
 }
 
 .input-select {
@@ -66,11 +68,23 @@ label {
     border: none;
     padding: 2.3vh;
     border-radius: 3vh;
-    color: rgba(231, 231, 231, 0.363);
+    color: #e7e7e75d;
     padding-left: 3vh;
     width: 45vh;
+    font-size: 2.3vh;
 }
   
+.div-select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.div-select img {
+    height: 4vh;
+    width: auto;
+}
+
 .submit {
     background-color: #215F4D;
     color: #C4F8CC;
@@ -88,6 +102,7 @@ label {
     align-self: center;
     position: absolute;
     bottom: 15vh;
+    font-size: 2.4vh;
 }
 
 /* Avisos */
@@ -118,17 +133,17 @@ label {
 .aviso::before {
     content: "";
     position: absolute;
-    top: -8px; 
+    top: -1.2vh; 
     left: 84%;
     transform: translateX(-50%);
-    border-width: 0 8px 8px 8px; 
+    border-width: 0 1.3vh 1.3vh 1.3vh; 
     border-style: solid;
     border-color: transparent transparent white transparent; 
 }
 
 .aviso img {
-    margin-left: 20px;
-    height: 25px;
+    margin-left: 3.3vh;
+    height: 4.1vh;
     width: auto;;
 }
 
