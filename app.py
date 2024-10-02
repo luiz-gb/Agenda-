@@ -13,15 +13,15 @@ app = Flask(__name__)
 app.secret_key = "NSNS2UQ8Q6FDQ6FSBA6"
 
 lideres = {
-    "3º de Informática": 202214610020,
-    "2º de Informática A": 202314610040,
-    "2º de Informática B": 202314610012,
-    "2º de de Meio Ambiente A": 202314710020,
-    "2º de de Meio Ambiente B": 202314710019,
-    "1º de Informática A": 202414610033,
-    "1º de Informática B": 202414610080,
-    "1º de Meio Ambiente A": 202414710015,
-    "1º de Meio Ambiente B": 202414710068,
+    "3º de Informática": "202214610020",
+    "2º de Informática A": "202314610040",
+    "2º de Informática B": "202314610012",
+    "2º de de Meio Ambiente A": "202314710020",
+    "2º de de Meio Ambiente B": "202314710019",
+    "1º de Informática A": "202414610033",
+    "1º de Informática B": "202414610080",
+    "1º de Meio Ambiente A": "202414710015",
+    "1º de Meio Ambiente B": "202414710068",
 }
 
 
@@ -110,9 +110,32 @@ def home_page():
                 data_atividade = atividade["data"]
 
                 if data_atividade not in dicionario:
-                    dicionario[data_atividade] = [atividade]
+                    dicionario[data_atividade] = {
+                        "lista_atividades": [atividade],
+                        "tipo": "privada",
+                    }
                 else:
-                    dicionario[data_atividade].append(atividade)
+                    dicionario[data_atividade]["lista_atividades"].append(atividade)
+            elif atividade["visibilidade"] == "Público":
+                dono_atividade = atividade["criador"]
+                for turma in lideres:
+                    if (
+                        turma == current_user["turma"]
+                        and lideres[turma] == dono_atividade
+                    ):
+                        data_atividade = atividade["data"]
+
+                        if data_atividade not in dicionario:
+                            dicionario[data_atividade] = {
+                                "lista_atividades": [atividade],
+                                "tipo": "publica",
+                            }
+                        else:
+                            dicionario[data_atividade]["lista_atividades"].append(
+                                atividade
+                            )
+                    else:
+                        pass
             else:
                 pass
         # pegando as atividades e tempo que falta para elas chegarem
@@ -129,7 +152,6 @@ def home_page():
 
             if atividade["criador"] == usuario_logado:
                 data_atividade = atividade["data"]
-                print("oi")
 
                 dia_atividade = int(data_atividade[:2])
                 mes_atividade = int(data_atividade[3:5])
@@ -142,7 +164,35 @@ def home_page():
                 ):
                     tempo_falta = int(dia_atividade) - int(dia_atual)
 
-                    lista_atividades_dias.append((atividade["titulo"], tempo_falta))
+                    lista_atividades_dias.append(
+                        (atividade["titulo"], tempo_falta, "privada")
+                    )
+
+            elif atividade["visibilidade"] == "Público":
+                dono_atividade = atividade["criador"]
+                for turma in lideres:
+                    if (
+                        turma == current_user["turma"]
+                        and lideres[turma] == dono_atividade
+                    ):
+                        data_atividade = atividade["data"]
+
+                        dia_atividade = int(data_atividade[:2])
+                        mes_atividade = int(data_atividade[3:5])
+                        ano_atividade = int(data_atividade[6:])
+
+                        if (
+                            ano_atividade == ano_atual
+                            and mes_atividade == mes_atual
+                            and dia_atividade >= dia_atual
+                        ):
+                            tempo_falta = int(dia_atividade) - int(dia_atual)
+
+                            lista_atividades_dias.append(
+                                (atividade["titulo"], tempo_falta, "publica")
+                            )
+                    else:
+                        pass
 
         if lista_atividades_dias:
             # organiza pelas atividades com menos dias
@@ -150,8 +200,8 @@ def home_page():
 
         # lista final
         lista_atividades = {}
-        for titulo, tempo_falta in lista_atividades_dias[:5]:
-            lista_atividades[titulo] = str(tempo_falta)
+        for titulo, tempo_falta, tipo in lista_atividades_dias[:5]:
+            lista_atividades[titulo] = {"dias_falta": str(tempo_falta), "tipo": tipo}
 
         # Adicionar "..." caso tenha mais de 5 atividades
         if len(lista_atividades_dias) > 5:
@@ -330,7 +380,6 @@ def cadastro_atividades():
             atividade1.guardar_atividade()
             return render_template(
                 "cadastro-atividades.html",
-                current_user=current_user,
                 current_user=current_user,
             )
 

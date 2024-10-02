@@ -58,7 +58,7 @@ label {
     padding: 2.3vh;
     border-radius: 3vh;
     outline: none;
-    font-size: 2.3vh;
+    font-size: 2vh;
 }
 
 .input-select {
@@ -132,7 +132,7 @@ label {
 .aviso::before {
     content: "";
     position: absolute;
-    top: -1.2vh; 
+    top: -1.1vh; 
     left: 84%;
     transform: translateX(-50%);
     border-width: 0 1.3vh 1.3vh 1.3vh; 
@@ -148,8 +148,4 @@ label {
 
 .aviso-date {
     left: -6vh;
-}
-
-.inputs {
-    font-size: 2.8vh;
 }

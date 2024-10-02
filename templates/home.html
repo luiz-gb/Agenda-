@@ -29,7 +29,7 @@
 
         <div class="urgencia">
             <div class="parte-cima-urgencia">
-                <h5>Urgências de atividades neste mês</h5>
+                <h5>URGÊNCIAS DO MÊS ATUAL</h5>
                 <img src="/static/imagens/urgencia2.svg" alt="">
             </div>
 
@@ -37,21 +37,31 @@
                 {% if lista_atividades %}
                     {% for atividade in lista_atividades %}
                         <ul>
-                            {% if lista_atividades[atividade] == '0' or lista_atividades[atividade] == '1' or lista_atividades[atividade] == '2' or lista_atividades[atividade] == '3' %}
+                            {% if lista_atividades[atividade]['dias_falta'] == '0' or lista_atividades[atividade]['dias_falta'] == '1' or lista_atividades[atividade]['dias_falta'] == '2' or lista_atividades[atividade]['dias_falta'] == '3' %}
                                 <li class="urgencia-marrom">
                                     <img src="/static/imagens/urgenciaMARROM.svg" alt="">
-                                    {% if lista_atividades[atividade] == '1' %}
+                                    {% if lista_atividades[atividade]['dias_falta'] == '1' %}
                                         <p>
-                                            {{ atividade.upper() + ' EM ' + lista_atividades[atividade] + ' DIA' }} 
+                                            {{ atividade.upper() + ' EM ' + lista_atividades[atividade]['dias_falta'] + ' DIA' }} 
                                         </p>
-                                    {% elif lista_atividades[atividade] == '0' %}
+                                    {% elif lista_atividades[atividade]['dias_falta'] == '0' %}
                                         <p>
                                             {{ atividade.upper() + ' HOJE'}} 
                                         </p>
                                     {% else %}
                                         <p>
-                                            {{ atividade.upper() + ' EM ' + lista_atividades[atividade] + ' DIAS' }} 
+                                            {{ atividade.upper() + ' EM ' + lista_atividades[atividade]['dias_falta'] + ' DIAS' }} 
                                         </p>
+                                    {% endif %}
+                                    {% if lista_atividades[atividade]['tipo'] == 'publica' %}
+                                        <div class="controle-aviso">
+                                            <img src="/static/imagens/coroa.svg" alt="aaa" class="imagem-coroa imagem1">
+                                            
+                                        </div>
+                                        
+                                        <div class="aviso-coroa aviso1">
+                                            <p>O líder postou essa atividade</p>
+                                        </div>
                                     {% endif %}
                                 </li>
                             
@@ -66,8 +76,18 @@
                                         </p>
                                         {% else %}
                                             <p>
-                                                {{ atividade.upper() + ' EM ' + lista_atividades[atividade] + ' DIAS' }} 
+                                                {{ atividade.upper() + ' EM ' + lista_atividades[atividade]['dias_falta'] + ' DIAS' }} 
                                             </p>
+                                        {% endif %}
+                                        {% if lista_atividades[atividade]['tipo'] == 'publica' %}
+                                            <div class="controle-aviso">
+                                                <img src="/static/imagens/coroa.svg" alt="aaa" class="imagem-coroa imagem2">
+                                                
+                                            </div>
+                                            
+                                            <div class="aviso-coroa aviso2">
+                                                <p>O líder postou essa atividade</p>
+                                            </div>
                                         {% endif %}
                                     </li>
                                 </ul>
@@ -94,11 +114,16 @@
                     <div class="container-atividade">
                         <h5>{{ data }}</h5>
                         <ul class="lista-atividades">
-                            {% for item in dicionario[data] %}
+                            {% for item in dicionario[data]['lista_atividades'] %}
                                 <li>
                                     <p>{{ item['titulo'] }}</p>
                                     <input type="checkbox">
                                     <a href="#">ABRIR ATIVIDADE</a>
+                                    {% if dicionario[data]['tipo'] == 'publica' %}
+                                        <div class="ajustar-imagem">
+                                            <img src="/static/imagens/coroa.svg" alt="" class="imagem-coroa-agenda">
+                                        </div>
+                                    {% endif %}
                                 </li>
                             {% endfor %}
                         </ul>

@@ -6,7 +6,7 @@
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "s",
-        "foto-perfil": "311564970_901947630811337_446897539961141935_ne655ccc3360006e8.jpg"
+        "foto-perfil": "312245310_2030620787131767_403086996710218371_n9fabca81a18479e6.jpg"
     },
     {
         "nome": "Roberto Bobio",
@@ -70,5 +70,14 @@
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "Sim",
         "foto-perfil": "312245310_2030620787131767_403086996710218371_naecbd85049ecc2b8.jpg"
+    },
+    {
+        "nome": "Davi Melo",
+        "matricula": "202214610020",
+        "email": "davi.melo@gmail.com",
+        "senha": "1307",
+        "turma": "3\u00ba de Inform\u00e1tica",
+        "lider": "s",
+        "foto-perfil": ""
     }
 ]

@@ -43,7 +43,7 @@
             </div>
             <div class="edit">
                 <a href="{{url_for('perfil')}}" class="edit-close">
-                    <img src="/static/imagens/close.svg" alt="" class="close">
+                    <img src="/static/imagens/back.svg" alt="" class="close">
                 </a>
                 <input type="image" src="/static/imagens/confirm.svg" form="meu-formulario" class="confirm">
             </div>
@@ -87,7 +87,11 @@
                 <div class="box-lider boxs">
                     <h5 class="titulos">Líder</h5>
                     <p class="campos campo-lock">
-                        {{  current_user['lider'] }}
+                        {% if current_user['lider'] == 's' %}
+                            Sim
+                        {% else %}
+                            Não
+                        {% endif %}
                         <img src="/static/imagens/lock.svg" class="img-input" alt="eae">
                     </p>
                 </div>

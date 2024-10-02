@@ -50,7 +50,13 @@
                 </div>
                 <div class="box-lider boxs">
                     <h5 class="titulos">Líder</h5>
-                    <p class="campos">{{  current_user['lider'] }}</p>
+                    <p class="campos">
+                        {% if current_user['lider'] == 's' %}
+                            Sim
+                        {% else %}
+                            Não
+                        {% endif %}
+                    </p>
                 </div>
                 <div class="box-solteiro boxs">
                     <h5 class="titulos">Qnt. De Atividades</h5>
