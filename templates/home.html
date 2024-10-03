@@ -42,7 +42,7 @@
                                     <img src="/static/imagens/urgenciaMARROM.svg" alt="">
                                     {% if lista_atividades[atividade]['dias_falta'] == '1' %}
                                         <p>
-                                            {{ atividade.upper() + ' EM ' + lista_atividades[atividade]['dias_falta'] + ' DIA' }} 
+                                            {{ atividade.upper() + ' AMANHÃ' }} 
                                         </p>
                                     {% elif lista_atividades[atividade]['dias_falta'] == '0' %}
                                         <p>
@@ -57,10 +57,6 @@
                                         <div class="controle-aviso">
                                             <img src="/static/imagens/coroa.svg" alt="aaa" class="imagem-coroa imagem1">
                                             
-                                        </div>
-                                        
-                                        <div class="aviso-coroa aviso1">
-                                            <p>O líder postou essa atividade</p>
                                         </div>
                                     {% endif %}
                                 </li>
@@ -83,10 +79,6 @@
                                             <div class="controle-aviso">
                                                 <img src="/static/imagens/coroa.svg" alt="aaa" class="imagem-coroa imagem2">
                                                 
-                                            </div>
-                                            
-                                            <div class="aviso-coroa aviso2">
-                                                <p>O líder postou essa atividade</p>
                                             </div>
                                         {% endif %}
                                     </li>
@@ -112,7 +104,7 @@
             {% if dicionario %}
                 {% for data in dicionario %}
                     <div class="container-atividade">
-                        <h5>{{ data }}</h5>
+                        <h5 class="data-parte-baixo-urgencia">{{ data }}</h5>
                         <ul class="lista-atividades">
                             {% for item in dicionario[data]['lista_atividades'] %}
                                 <li>

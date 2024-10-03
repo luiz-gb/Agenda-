@@ -13,11 +13,33 @@ main {
     padding: 5vh 7vh;
     border-radius: 3vh;
 }
+
+.box-img {
+    background-color: #1a1a1a;
+    position: absolute;
+    width: 26vh;
+    height: 26vh;
+    left: -1vh;
+    top: -1vh;
+    border-radius: 50%;
+}
+
 .imagem {
     height: auto;
     width: 24vh;
     margin-bottom: 3vh;
     border-radius: 50%;
+    z-index: 10;
+    position: relative;
+}
+
+.coroa-perfil {
+    position: absolute;
+    height: auto;
+    width: 4vh;
+    top: -3.8vh;
+    left: 10vh;
+    display: none;
 }
 
 .baixo-box {

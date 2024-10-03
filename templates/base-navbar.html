@@ -20,10 +20,13 @@
             <img src="/static/imagens/lupa.png" alt="Lupa" id="search-icon">
         </div>
         <div class="navbar-profile">
+            {% if current_user['lider'] == 's' %}
+                <img src="/static/imagens/coroa.svg" class="coroa-navbar" alt="">
+            {% endif %}
             {% if current_user['foto-perfil'] %}
-                <img src="/static/fotos_perfil/{{ current_user['foto-perfil'] }}" alt="">
+                <img src="/static/fotos_perfil/{{ current_user['foto-perfil'] }}" class="profile" alt="">
             {% else %}
-                <img src="/static/imagens/profile-low5.jpg" alt="Profile">
+                <img src="/static/imagens/profile-low5.jpg" alt="Profile" class="profile">
             {% endif %}
         </div>
 

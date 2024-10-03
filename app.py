@@ -369,9 +369,13 @@ def cadastro_atividades():
             ano = data[:4]
             data_reformada = dia + "/" + mes + "/" + ano
 
-            visibilidade = request.form.get("selecionarvisibilidade")
-
             usuario_logado = session.get("usuario_logado")
+
+            if current_user["lider"] == "s":
+
+                visibilidade = request.form.get("selecionarvisibilidade")
+            else:
+                visibilidade = "Privado"
 
             atividade1 = Atividade(
                 titulo, descricao, data_reformada, visibilidade, usuario_logado

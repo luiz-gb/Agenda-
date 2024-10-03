@@ -60,30 +60,5 @@ nextMonthBtn.addEventListener('click', () => {
 // Renderiza o calendário ao carregar a página
 renderCalendar(currentDate);
 
-const aviso1 = document.querySelector('.aviso1')
-const imagem1 = document.querySelector('.imagem1')
-const aviso2 = document.querySelector('.aviso2')
-const imagem2 = document.querySelector('.imagem2')
-
-function aparecer_aviso1 () {
-    console.log('oi')
-    aviso1.style.display = 'block'
-}
-
-function tirar_aviso1 () {
-    aviso1.style.display = 'none'
-}
-
-function aparecer_aviso2 () {
-    aviso2.style.display = 'block'
-}
-
-function tirar_aviso2 () {
-    aviso2.style.display = 'none'
-}
-
-imagem1.addEventListener('mouseover', aparecer_aviso1)
-imagem1.addEventListener('mouseleave', tirar_aviso1)
-imagem2.addEventListener('mouseover', aparecer_aviso2)
-imagem2.addEventListener('mouseleave', tirar_aviso2)
+ 
 

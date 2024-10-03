@@ -19,6 +19,8 @@
     {% endwith %}
     <div class="box">
         <div class="cima-box">
+            <img src="/static/imagens/coroa.svg" alt="" class="coroa-perfil">
+            <div class="box-img"></div>
             {% if current_user['foto-perfil'] %}
                 <img src="/static/fotos_perfil/{{ current_user['foto-perfil'] }}" class="imagem" alt="">
             {% else %}

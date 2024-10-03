@@ -20,30 +20,34 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 1.67vh 3.33vh;
     background-color: #1F1F1F;
-    height: 60px;
+    height: 10vh;
     width: 100%;
     z-index: 10;
 }
 
+.navbar-logo {
+    display: flex;
+}
+
 .navbar-logo img {
-    height: 40px;
-    width: 40px;
+    height: 6.67vh;
+    width: 6.67vh;
 }
 
 .navbar-search {
     flex: 1;
-    margin: 0 20px;
+    margin: 0 3.33vh;
     position: relative;
-    max-width: 40px;
+    max-width: 6.67vh;
     transition: max-width 0.5s ease;
 }
 
 .navbar-search input {
     width: 100%;
-    padding: 10px 40px 10px 15px;
-    border-radius: 20px;
+    padding: 1.67vh 6.67vh 1.67vh 2.5vh;
+    border-radius: 3.33vh;
     border: none;
     outline: none;
     background-color: #333;
@@ -56,17 +60,27 @@ body {
 
 .navbar-search img {
     position: absolute;
-    right: 15px;
+    right: 2.5vh;
     top: 50%;
     transform: translateY(-50%);
-    height: 20px;
-    width: 20px;
+    height: 3.33vh;
+    width: 3.33vh;
     cursor: pointer;
 }
 
-.navbar-profile img {
-    height: 40px;
-    width: 40px;
+.navbar-profile {
+    display: flex;
+}
+
+.coroa-navbar {
+    height: auto;
+    width: 3vh;
+    margin-right: 1.5vh;
+}
+
+.navbar-profile .profile {
+    height: 6.67vh;
+    width: 6.67vh;
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
@@ -74,7 +88,7 @@ body {
 
 /* Estilo quando o campo de busca está ativo */
 .navbar-search.active {
-    max-width: 300px;
+    max-width: 50vh;
 }
 
 .navbar-search.active input {
@@ -88,27 +102,27 @@ body {
     background-color: #353535;
     display: none;
     color: white;
-    border-radius: 10px;
-    width: 120px;
+    border-radius: 1.67vh;
+    width: 20vh;
     position: absolute;
-   right: 20px;
-   top: 50px;
+    right: 3.33vh;
+    top: 8.33vh;
 }
 
 .perfil-expanded a {
     text-decoration: none;
     color: white;
-
 }
 
 .perfil-expanded div {
     display: flex;
-    padding: 5px 15px;
+    padding: 0.83vh 2.5vh;
     cursor: pointer;
 }
 
 .perfil-expanded img {
-    margin-right: 10px;
+    margin-right: 1.67vh;
     height: auto;
-    width: 18px;
+    width: 3vh;
 }
+

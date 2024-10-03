@@ -18,6 +18,8 @@ main {
     width: 24vh;
     margin-bottom: 3vh;
     border-radius: 50%;
+    position: relative;
+    z-index: 10;
 }
 
 .baixo-box {
@@ -113,10 +115,30 @@ main {
     position: absolute;
     bottom: 3vh;
     left: 17vh;
+    z-index: 11;
 }
 
 .bloco-imagem {
     position: relative;
+}
+
+.box-img {
+    background-color: #1a1a1a;
+    position: absolute;
+    width: 26vh;
+    height: 26vh;
+    left: -1vh;
+    top: -1vh;
+    border-radius: 50%;
+}
+
+.coroa-perfil {
+    position: absolute;
+    height: auto;
+    width: 4vh;
+    top: -3.8vh;
+    left: 10vh;
+    display: none;
 }
 
 .label-input-file img {

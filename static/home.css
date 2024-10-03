@@ -2,33 +2,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 1.67vh 3.33vh;
     background-color: #1F1F1F;
-    height: 60px;
+    height: 10vh;
     width: 100%;
     position: fixed;
 }
 
-/* Container do calendário */
 .calendar-container {
     background-color: #1F1F1F;
     color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 350px;
+    border-radius: 1.33vh;
+    box-shadow: 0 0 1.67vh rgba(0, 0, 0, 0.1);
+    padding: 3.33vh;
+    width: 58.33vh;
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 3.33vh;
 }
 
 .calendar-header h2 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 4vh;
 }
 
 .calendar-header button {
@@ -48,7 +47,8 @@
 }
 
 .calendar-weekdays div {
-    width: calc(100% / 7);
+    width: calc(50vh / 7);
+    font-size: 2.6vh;
 }
 
 .calendar-days {
@@ -57,15 +57,16 @@
 }
 
 .calendar-days div {
-    width: calc(100% / 7);
-    height: 50px;
+    width: calc(50vh / 7);
+    height: 8.33vh;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-bottom: 5px;
-    border-radius: 5px;
+    margin-bottom: 0.83vh;
+    border-radius: 0.83vh;
     transition: background-color 0.3s ease;
+    font-size: 2.5vh;
 }
 
 .calendar-days div:hover {
@@ -78,14 +79,9 @@
     font-weight: bold;
 }
 
-/* fim calendário */
-
-
-/* urgências */
-
 .principal {
-    margin-top: 100px;
-    width: 70%;
+    margin-top: 16.67vh;
+    width: 155vh;
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -97,7 +93,7 @@
 }
 
 .urgencia {
-    margin-left: 20px;
+    margin-left: 3.33vh;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -109,41 +105,43 @@
     width: 100%;
     justify-content: space-between;
     background-color: #B65118;
-    padding: 3px;
-    padding-left: 20px;
-    border-radius: 8px;
+    padding: 0.5vh;
+    padding-left: 3.33vh;
+    border-radius: 1.33vh;
 }
 
 .parte-cima-urgencia img {
     height: auto;
-    width: 30px;
+    width: 5vh;
 }
 
+.parte-cima-urgencia h5 {
+    font-size: 2.3vh;
+}
 
 .parte-baixo-urgencia {
     background-color: #353535;
-    border-radius: 10px;
-    padding: 30px;
-    margin-top: 10px;
+    border-radius: 1.67vh;
+    padding: 5vh;
+    margin-top: 1.67vh;
     width: 100%;
     flex-grow: 1;
-    
 }
 
 .parte-baixo-urgencia ul {
     list-style-type: none;
-    padding-left: 0; 
+    padding-left: 0;
     margin: 0;
 }
 
 .parte-baixo-urgencia li {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 3.33vh;
 }
 
 .parte-baixo-urgencia p {
-    font-size: 20px;
+    font-size: 3.4vh;
 }
 
 .urgencia-marrom p {
@@ -158,51 +156,23 @@
 
 .parte-baixo-urgencia img {
     height: auto;
-    width: 30px;
-    margin-right: 20px;
+    width: 5.5vh;
+    margin-right: 3.33vh;
 }
 
-/* Perfil expanded */
-
-.perfil-expanded {
-    background-color: #353535;
-    display: none;
-    color: white;
-    border-radius: 10px;
-    width: 120px;
-    position: absolute;
-   right: 20px;
-   top: 50px;
+.data-parte-baixo-urgencia {
+    font-size: 2.3vh;
+    margin-left: 1vh;
 }
-
-.perfil-expanded a {
-    text-decoration: none;
-    color: white;
-
-}
-
-.perfil-expanded div {
-    display: flex;
-    padding: 5px 15px;
-    cursor: pointer;
-}
-
-.perfil-expanded img {
-    margin-right: 10px;
-    height: auto;
-    width: 18px;
-}
-
-/* Partezona de baixo */
 
 .parte2-principal {
     background-color: #292929;
-    border-radius: 10px;
+    border-radius: 1.67vh;
     width: 100%;
-    min-height: 300px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    padding: 20px;
+    min-height: 50vh;
+    margin-top: 3.33vh;
+    margin-bottom: 6.67vh;
+    padding: 3.33vh;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -211,51 +181,47 @@
 .titulo-parte2 {
     color: white;
     text-align: center;
-    font-size: 20px;
+    font-size: 3.33vh;
 }
 
 .super-container {
     width: 93%;
     align-self: center;
-    margin-top: 10px;
+    margin-top: 1.67vh;
     display: flex;
     flex-direction: column;
-    margin-bottom: 70px;
+    margin-bottom: 11.67vh;
     max-height: 50vh;
-    overflow-y: auto;  /* Habilita o scroll vertical caso o conteúdo exceda o max-height */
+    overflow-y: auto;
 }
 
-/* Personaliza a barra de rolagem (para navegadores WebKit) */
 .super-container::-webkit-scrollbar {
-    width: 12px; /* Largura da barra de rolagem */
+    width: 2vh;
 }
 
-/* Estilo da parte do "trilho" da scrollbar */
 .super-container::-webkit-scrollbar-track {
-    background: #242424; /* Cor de fundo do trilho */
-    border-radius: 2px; /* Bordas arredondadas do trilho */
+    background: #242424;
+    border-radius: 0.33vh;
 }
 
-/* Estilo da parte "deslizante" da scrollbar */
 .super-container::-webkit-scrollbar-thumb {
-    background-color: #888; /* Cor da barra de rolagem */
-    border-radius: 2px;    /* Bordas arredondadas da barra */
+    background-color: #888;
+    border-radius: 0.33vh;
 }
 
-/* Estilo da barra de rolagem ao passar o mouse */
 .super-container::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Cor da barra de rolagem ao passar o mouse */
+    background-color: #555;
 }
 
 .container-atividade {
-    margin-bottom: 20px;
+    margin-bottom: 3.33vh;
 }
 
 .container-atividade ul {
     list-style: none;
     background-color: #353535;
-    border-radius: 10px;
-    padding: 15px;
+    border-radius: 1.67vh;
+    padding: 2.5vh;
 }
 
 .lista-atividades li {
@@ -266,12 +232,13 @@
 .lista-atividades p {
     color: #0CBC8B;
     font-weight: bold;
+    font-size: 2.7vh;
 }
 
 .lista-atividades input {
-    margin-left: 5px;
+    margin-left: 0.83vh;
     height: auto;
-    width: 20px;
+    width: 3.33vh;
     box-sizing: border-box;
 }
 
@@ -280,7 +247,8 @@
     font-style: none;
     text-decoration: none;
     font-weight: 700;
-    margin-left: 10px;
+    margin-left: 1.67vh;
+    font-size: 2.7vh;
 }
 
 .lista-atividades a:hover {
@@ -291,24 +259,26 @@
     background-color: #2A715D;
     color: white;
     text-decoration: none;
-    padding: 10px;
-    border-radius: 15px;
+    padding: 1.67vh;
+    border-radius: 2.5vh;
     display: inline-flex;
     justify-content: space-between;
-    width: 220px;
+    width: 36.67vh;
     align-self: center;
     position: absolute;
-    bottom: 30px;
+    bottom: 5vh;
     align-items: center;
 }
 
 .botao-atividade img {
     height: auto;
-    width: 25px;
-    margin-left: 10px;
+    width: 4.17vh;
+    margin-left: 1.67vh;
 }
 
-/* Coroa do lado do nome da atividade caso seja pública */
+.botao-atividade p {
+    font-size: 2.7vh;
+}
 
 .imagem-coroa {
     height: 3vh !important;
@@ -329,24 +299,6 @@
     width: auto !important;
     margin-left: 2vh !important;
     cursor: pointer !important;
-}
-
-.aviso-coroa {
-    position: absolute !important;
-    background-color: #252525 !important;
-    font-size: 0.8vh !important;
-    padding: 1.5vh;
-    border-radius: 2vh;
-    right: -2vh;
-    bottom: 4.5vh;
-    display: none;
-
-}
-.aviso-coroa p {
-    font-size: 2.4vh;
-    color: white;
-    font-weight: 400;
-
 }
 
 .controle-aviso {
