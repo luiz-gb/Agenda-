@@ -47,9 +47,21 @@
         </div>
     </div>
 
-    <script src= "{{ url_for('static', filename='scripts/base-navbar.js') }}" ></script>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="card">
+            <p class="alert">{{messages[0]}}</p>
+            <button onclick="tirar_card()">X</button>
+            <div class="barra">
+                <div class="barra2"></div>
+            </div>
+        </div>
+    {% endif %}
+    {% endwith %}
 
     {% block body %}
     {% endblock %}
+
+    <script src= "{{ url_for('static', filename='scripts/base-navbar.js') }}" ></script>
 </body>
 </html>

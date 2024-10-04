@@ -1,0 +1,54 @@
+{% extends "base-navbar.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/tela-atividade.css">
+{% endblock %}
+
+{% block body %}
+    <main>
+        
+        <div class="container-form">
+            <a href="{{ url_for('tela_atividades_edit', codigo_atividade=atvd['cod'] ) }}">
+                <img src="/static/imagens/edit.svg" class="img-edit" alt="">
+            </a>
+            <div class="form">
+                <div class="bloco-input">
+                    <label for="titulo">TÍTULO DA ATIVIDADE</label>
+                    <p class="inputs-text inputs input-titulo">{{ atvd['titulo'] }}</p>
+                </div>
+
+                <div class="bloco-input">
+                    <label for="descricao">DESCRIÇÃO DA ATIVIDADE</label>
+                    {% if atvd['descricao'] %}
+                        <p class="inputs-text inputs">{{ atvd['descricao'] }}</p>
+                    {% else %}
+                        <p class="inputs-text inputs">...</p>
+                    {% endif %}
+                </div>
+
+                <div class="container-inputs">
+                    <div class="bloco-input bloco-data">
+                        <label for="data">DATA</label>
+                        <p id="data" class="input-date inputs">{{ atvd['data'] }}</p>
+                    </div>
+    
+                    <div class="bloco-input">
+                        <label for="selecionarvisibilidade">VISIBILIDADE</label>
+                        <p class="input-select inputs">{{ atvd['visibilidade'] }}</p>
+                    </div>
+                    <div class="bloco-input">
+                        <label>Status</label>
+                        <p class="input-select inputs">{{ atvd['status'] }}</p>
+                    </div>
+                </div>
+
+                <a name="submit-atividades inputs" class="submit inputs href" href="{{ url_for('excluir_atividade', codigo=atvd['cod'] ) }}">
+                    <img src="/static/imagens/lixeira.svg" alt="">
+                    <p>Excluir Atividade</p>
+                </a>
+
+
+            </div>
+        </div>
+    </main>
+{% endblock %}

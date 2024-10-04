@@ -89,8 +89,8 @@
                 {% else %}
                     <ul>
                         <li class="urgencia-verde">
-                            <img src="/static/imagens/urgenciaVERDE.svg" alt="">
-                            <p class="mensagem-sucesso">Parabéns!!! Seus próximos dias estão livres, aproveite!! </p>
+                            <img src="/static/imagens/festa.svg" alt="">
+                            <p class="mensagem-sucesso">VOCÊ NÃO POSSUI ATIVIDADES ESSE MÊS! </p>
                         </li>
                     </ul>
                 {% endif %}
@@ -109,9 +109,14 @@
                             {% for item in dicionario[data]['lista_atividades'] %}
                                 <li>
                                     <p>{{ item['titulo'] }}</p>
-                                    <input type="checkbox">
-                                    <a href="#">ABRIR ATIVIDADE</a>
-                                    {% if dicionario[data]['tipo'] == 'publica' %}
+                                    {% if item['status'] == 'Pendente'%}
+                                        <input type="checkbox" disabled>
+                                    {% else %}
+                                        <input type="checkbox" checked disabled>
+                                    {% endif %}
+                                    <a href="{{ url_for('tela_atividades', codigo_atividade=item['cod'] ) }}">ABRIR ATIVIDADE</a>
+                                    
+                                    {% if item['visibilidade'] == 'Público' %}
                                         <div class="ajustar-imagem">
                                             <img src="/static/imagens/coroa.svg" alt="" class="imagem-coroa-agenda">
                                         </div>
@@ -122,7 +127,10 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <p>Você não possui atividades!!!</p>
+                <div class="naopossui-agenda">
+                    <img src="/static/imagens/festa.svg" alt="">
+                    <span>VOCÊ NÃO POSSUI ATIVIDADES NO MOMENTO! APROVEITE SEU DIA!</span>
+                </div>
             {% endif %}
 
         </div>
@@ -132,7 +140,6 @@
         </a>
     </div>
 </main>
-
 
 <script src= "{{ url_for('static', filename='scripts/home.js') }}" ></script>
 {% endblock %}

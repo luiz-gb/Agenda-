@@ -17,13 +17,14 @@ main {
     display: flex;
 }
 
-form {
+.form {
     width: 100%;
     display: flex;
     flex-direction: column;
     flex: 1;
-    height: 52vh;
+    height: 55vh;
     justify-content: space-between;
+    margin-top: 2vh;
 }
 
 .container-form {
@@ -32,6 +33,7 @@ form {
     background-color: #292929;
     padding: 5vh;
     border-radius: 2.8vh;
+    position: relative;
 }
 
 label {
@@ -47,19 +49,19 @@ label {
     padding: 2.3vh;
     border-radius: 3vh;
     outline: none;
-    color: rgb(231, 231, 231);
+    color: #787878;
     font-size: 2.3vh;
 }
 
 .input-date {
     border: none;
-    width: 30vh;
+    width: 17vh;
     background-color: #353535;
     color: rgba(231, 231, 231, 0.363);
     padding: 2.3vh;
     border-radius: 3vh;
     outline: none;
-    font-size: 2vh;
+    font-size: 2.3vh;
 }
 
 .input-select {
@@ -70,7 +72,7 @@ label {
     border-radius: 3vh;
     color: #e7e7e75d;
     padding-left: 3vh;
-    width: 45vh;
+    width: 24vh;
     font-size: 2.3vh;
 }
   
@@ -86,23 +88,20 @@ label {
 }
 
 .submit {
-    background-color: #215F4D;
-    color: #C4F8CC;
-    padding: 2.3vh;
-    border-radius: 3vh;
-    border: none;
+    background-color: #212121;
+    display: flex;
     width: 30vh;
-    background-image: url(imagens/maizin.svg);
-    background-size: 3.8vh auto;
-    background-repeat: no-repeat;
-    background-position: calc(100% - 2vh) center;;
-    padding-right: 10vh;
+    justify-content: space-between;
+    padding: 2.3vh;
+    align-items: center;
     cursor: pointer;
-    margin-top: 6vh;
-    align-self: center;
-    position: absolute;
-    bottom: 15vh;
-    font-size: 2.4vh;
+    font-size: 2.3vh;
+    border-radius: 3vh;
+}
+
+.submit img {
+    height: auto;
+    width: 3vh;
 }
 
 /* Avisos */
@@ -149,4 +148,24 @@ label {
 
 .aviso-date {
     left: -6vh;
+}
+
+.container-inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 70vh;
+}
+
+.img-edit {
+    position: absolute;
+    right: 3vh;
+    top: 3vh;
+    height: auto;
+    width: 3vh;
+    cursor: pointer;
+}
+
+.href {
+    text-decoration: none;
+    color: #ffffff;
 }

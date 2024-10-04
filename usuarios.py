@@ -1,4 +1,4 @@
-import json
+import json, random
 
 
 class Cliente:
@@ -49,6 +49,8 @@ class Cliente:
 
 class Atividade:
     def __init__(self, titulo, descricao, data, visibilidade, criador):
+        self.cod = None
+        self.status = "Pendente"
         self.titulo = titulo
         self.descricao = descricao
         self.data = data
@@ -56,19 +58,40 @@ class Atividade:
         self.criador = criador
 
     def guardar_atividade(self):
+        try:
+            with open("atividades.json", "r") as arquivo:
+                atividades = json.load(arquivo)
+        except FileNotFoundError:
+            atividades = []
+
+        # verufica se ja tem alguma atividade com o mesmo codigo
+        if atividades:
+            while True:
+                codigo = str(random.randint(1000, 9999))
+
+                tem_igual = False
+                for atividade in atividades:
+                    if atividade["cod"] == codigo:
+                        tem_igual = True
+                    else:
+                        pass
+
+                if tem_igual:
+                    continue
+                else:
+                    break
+        else:
+            codigo = str(random.randint(1000, 9999))
+
         nova_atividade = {
+            "cod": codigo,
+            "status": self.status,  # pendente ou concluida
             "titulo": self.titulo,
             "descricao": self.descricao,
             "data": self.data,
             "visibilidade": self.visibilidade,
             "criador": self.criador,
         }
-
-        try:
-            with open("atividades.json", "r") as arquivo:
-                atividades = json.load(arquivo)
-        except FileNotFoundError:
-            atividades = []
 
         atividades.append(nova_atividade)
 
@@ -83,3 +106,7 @@ class Atividade:
             atividades = []
 
         return atividades
+
+    def atualizar_atividades(nova_lista):
+        with open("atividades.json", "w") as arquivo:
+            json.dump(nova_lista, arquivo, indent=4)

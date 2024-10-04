@@ -60,5 +60,5 @@ nextMonthBtn.addEventListener('click', () => {
 // Renderiza o calendário ao carregar a página
 renderCalendar(currentDate);
 
- 
+
 

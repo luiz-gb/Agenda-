@@ -169,7 +169,7 @@
     background-color: #292929;
     border-radius: 1.67vh;
     width: 100%;
-    min-height: 50vh;
+    min-height: 42vh;
     margin-top: 3.33vh;
     margin-bottom: 6.67vh;
     padding: 3.33vh;
@@ -181,7 +181,7 @@
 .titulo-parte2 {
     color: white;
     text-align: center;
-    font-size: 3.33vh;
+    font-size: 2.7vh;
 }
 
 .super-container {
@@ -313,4 +313,27 @@
 
 .urgencia-marrom {
     position: relative;
+}
+
+.naopossui-agenda {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.naopossui-agenda span {
+    background-color: #0CBC8B;
+    display: flex;
+    align-items: center;
+    padding: 1vh 3vh;
+    border-radius: 3vh;
+    color: #262626;
+    font-weight: bold;
+    font-size: 3.2vh;
+}
+
+.naopossui-agenda img {
+    height: auto;
+    width: 9vh;
 }

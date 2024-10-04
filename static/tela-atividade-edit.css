@@ -3,7 +3,7 @@
 body {
     background-color: #121212;
     color: #ffffff;
-    min-height: 90vh;
+    min-height: 92vh;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@ main {
     width: 150vh;
     align-self: center;
     flex: 1;
-    margin-top: 10vh;
+    margin-top: 8vh;
     display: flex;
 }
 
@@ -24,6 +24,7 @@ form {
     flex: 1;
     height: 52vh;
     justify-content: space-between;
+    margin-top: 2.5vh;
 }
 
 .container-form {
@@ -32,11 +33,12 @@ form {
     background-color: #292929;
     padding: 5vh;
     border-radius: 2.8vh;
+    position: relative;  
 }
 
 label {
     color: #0CBC8B;
-    font-size: 2.6vh;
+    font-size: 2.3vh;
     margin-left: 1.5vh;
     font-weight: bold;
 }
@@ -49,6 +51,7 @@ label {
     outline: none;
     color: rgb(231, 231, 231);
     font-size: 2.3vh;
+    color: #787878;
 }
 
 .input-date {
@@ -92,7 +95,7 @@ label {
     border-radius: 3vh;
     border: none;
     width: 30vh;
-    background-image: url(imagens/maizin.svg);
+    background-image: url(imagens/confirm2.svg);
     background-size: 3.8vh auto;
     background-repeat: no-repeat;
     background-position: calc(100% - 2vh) center;;
@@ -103,6 +106,7 @@ label {
     position: absolute;
     bottom: 15vh;
     font-size: 2.4vh;
+    bottom: 4vh;
 }
 
 /* Avisos */
@@ -149,4 +153,34 @@ label {
 
 .aviso-date {
     left: -6vh;
+}
+
+.img-back {
+    position: absolute;
+    left: 3vh;
+    top: 2vh;
+    cursor: pointer;
+}
+
+.img-back img {
+    height: auto;
+    width: 4vh;
+}
+
+.block-inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 78vh;
+}
+
+.input-status {
+    background-color: #353535;
+    outline: none;
+    border: none;
+    padding: 2.3vh;
+    border-radius: 3vh;
+    color: #e7e7e75d;
+    padding-left: 3vh;
+    width: 45vh;
+    font-size: 2.3vh;
 }

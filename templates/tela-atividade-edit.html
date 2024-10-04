@@ -1,0 +1,83 @@
+{% extends "base-navbar.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/tela-atividade-edit.css">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="container-form">
+            <a href="{{ url_for('tela_atividades', codigo_atividade=atvd['cod'] ) }}" class="img-back">
+                <img src="/static/imagens/back.svg" alt="">
+            </a>
+            <form action="" method="post">
+                <div class="bloco-input">
+                    <label for="titulo">DIGITE O TÍTULO DA ATIVIDADE</label>
+                    <input type="text" name="titulo" class="inputs-text inputs input-titulo" value="{{ atvd['titulo'] }}">
+                    <div class="aviso aviso-titulo">
+                        <p>Digite pelo menos 4 caractéres</p>
+                        <img src="/static/imagens/urgencia.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="bloco-input">
+                    <label for="descricao">DIGITE A DESCRIÇÃO DA ATIVIDADE</label>
+                    <input type="text" name="descricao" class="inputs-text inputs input-descricao" value="{{atvd['descricao']}}">
+                </div>
+                
+                <div class="block-inputs">
+                    <div class="bloco-input bloco-data">
+                        <label for="data">DATA DA ATIVIDADE</label>
+                        <input type="date" name="data" id="data" class="input-date inputs" value="{{nova_data}}">
+                        <div class="aviso aviso-date">
+                            <p>Digite pelo menos 4 caractéres</p>
+                            <img src="/static/imagens/urgencia.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="bloco-input">
+                        <label for="selecionarvisibilidade">SELECIONAR STATUS</label>
+                        <select placeholder="" name="selecionarstatus" class="input-status inputs">
+                            {% if atvd['status'] == 'Pendente' %}
+                                <option>Pendente</option>
+                                <option>Concluído</option>
+                            {% else %}
+                                <option>Concluído</option>
+                                <option>Pendente</option>
+                            {% endif %}
+                        </select>
+                    </div>
+                </div>
+
+                {% if current_user['lider'] == 's' %}
+                    <div class="bloco-input">
+                        <label for="selecionarvisibilidade">SELECIONE A VISIBILIDADE</label>
+                        <select placeholder="Selecionar visibilidade" name="selecionarvisibilidade" class="input-select inputs">
+                            {% if atvd['visibilidade'] == 'Privado' %}
+                                <option>Privado</option>
+                                <option>Público</option>
+                            {% else %}
+                                <option>Público</option>
+                                <option>Privado</option>
+                            {% endif %}
+                        </select>
+                    </div>
+                {% else %}
+                    <div class="bloco-input">
+                        <label for="selecionarvisibilidade">SELECIONE A VISIBILIDADE</label>
+                        <div class="input-select inputs div-select">
+                            <p>Privado</p>
+                            <img src="/static/imagens/lock.svg" alt="">
+                        </div>
+                    </div>
+                {% endif %}
+
+                <input type="submit" value="Confirmar" name="submit-atividades inputs" class="submit inputs">
+
+
+            </form>
+        </div>
+    </main>
+
+    <script src= "{{ url_for('static', filename='scripts/tela-atividade-edit.js') }}" ></script>
+{% endblock %}

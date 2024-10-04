@@ -6,17 +6,6 @@
 
 {% block body %}
 <main>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <div class="card">
-            <p class="alert">Dados atualizados!</p>
-            <button onclick="tirar_card()">X</button>
-            <div class="barra">
-                <div class="barra2"></div>
-            </div>
-        </div>
-    {% endif %}
-    {% endwith %}
     <div class="box">
         <div class="cima-box">
             <img src="/static/imagens/coroa.svg" alt="" class="coroa-perfil">

@@ -150,7 +150,10 @@ def home_page():
 
         for atividade in atividades:
 
-            if atividade["criador"] == usuario_logado:
+            if (
+                atividade["criador"] == usuario_logado
+                and atividade["status"] == "Pendente"
+            ):
                 data_atividade = atividade["data"]
 
                 dia_atividade = int(data_atividade[:2])
@@ -168,7 +171,10 @@ def home_page():
                         (atividade["titulo"], tempo_falta, "privada")
                     )
 
-            elif atividade["visibilidade"] == "Público":
+            elif (
+                atividade["visibilidade"] == "Público"
+                and atividade["status"] == "Pendente"
+            ):
                 dono_atividade = atividade["criador"]
                 for turma in lideres:
                     if (
@@ -263,7 +269,7 @@ def perfil():
             quantidade_atividades=quantidade_atividades,
         )
     else:
-        redirect(url_for("login_page"))
+        return redirect(url_for("login_page"))
 
 
 @app.route("/Perfil-edit", methods=["GET", "POST"])
@@ -290,7 +296,7 @@ def perfil_edit():
 
             Cliente.atualizar_usuarios(users)
 
-            flash("Usuário Atualizado")
+            flash("Dados atualizados!")
             return redirect(url_for("perfil"))
 
         else:
@@ -327,7 +333,7 @@ def perfil_edit():
                 quantidade_atividades=quantidade_atividades,
             )
     else:
-        redirect(url_for("login_page"))
+        return redirect(url_for("login_page"))
 
 
 @app.route("/Cadastro-Atividades", methods=["GET", "POST"])
@@ -404,7 +410,169 @@ def cadastro_atividades():
             )
 
     else:
-        redirect(url_for("login_page"))
+        return redirect(url_for("login_page"))
+
+
+@app.route("/Atividade/<string:codigo_atividade>")
+def tela_atividades(codigo_atividade):
+    if session.get("usuario_logado"):
+        # pegando o current
+        usuarios = Cliente.pegar_usuarios()
+        usuario_logado = session.get("usuario_logado")
+        current_user = None
+
+        # pegando usuário logado para enviar informações pra tela de login
+        for usuario in usuarios:
+            if usuario["matricula"] == usuario_logado:
+                current_user = usuario
+            else:
+                pass
+
+        # atividades
+        atividades = Atividade.pegar_atividades()
+        atvd = None
+        tem_atividade = False
+
+        for atividade in atividades:
+            if (
+                atividade["cod"] == codigo_atividade
+                and atividade["criador"] == current_user["matricula"]
+            ):
+                tem_atividade = True
+                atvd = atividade
+            else:
+                pass
+
+        if tem_atividade:
+            return render_template(
+                "tela-atividade.html", current_user=current_user, atvd=atvd
+            )
+        else:
+            flash("ACESSO RESTRITO!")
+            return redirect(url_for("home_page"))
+    else:
+        return redirect(url_for("login_page"))
+
+
+@app.route("/Atividade-Edit/<string:codigo_atividade>", methods=["GET", "POST"])
+def tela_atividades_edit(codigo_atividade):
+    if session.get("usuario_logado"):
+        if request.method == "POST":
+            # pegando o current
+            usuarios = Cliente.pegar_usuarios()
+            usuario_logado = session.get("usuario_logado")
+            current_user = None
+
+            # pegando usuário logado para enviar informações pra tela de login
+            for usuario in usuarios:
+                if usuario["matricula"] == usuario_logado:
+                    current_user = usuario
+                else:
+                    pass
+
+            titulo = request.form.get("titulo")
+            descricao = request.form.get("descricao")
+            data = request.form.get("data")
+            status = request.form.get("selecionarstatus")
+
+            # reforma da data
+            dia = data[-2:]
+            mes = data[-5:-3]
+            ano = data[:4]
+            data_reformada = dia + "/" + mes + "/" + ano
+
+            usuario_logado = session.get("usuario_logado")
+
+            if current_user["lider"] == "s":
+
+                visibilidade = request.form.get("selecionarvisibilidade")
+            else:
+                visibilidade = "Privado"
+
+            atividades = Atividade.pegar_atividades()
+
+            for atividade in atividades:
+                if atividade["cod"] == codigo_atividade:
+                    atividade["titulo"] = titulo
+                    atividade["descricao"] = descricao
+                    atividade["data"] = data_reformada
+                    atividade["visibilidade"] = visibilidade
+                    atividade["status"] = status
+
+            Atividade.atualizar_atividades(atividades)
+
+            flash("ATIVIDADE ATUALIZADA!")
+            return redirect(
+                url_for("tela_atividades", codigo_atividade=codigo_atividade)
+            )
+
+        else:
+            # pegando o current
+            usuarios = Cliente.pegar_usuarios()
+            usuario_logado = session.get("usuario_logado")
+            current_user = None
+
+            # pegando usuário logado para enviar informações pra tela de login
+            for usuario in usuarios:
+                if usuario["matricula"] == usuario_logado:
+                    current_user = usuario
+                else:
+                    pass
+
+            # atividades
+            atividades = Atividade.pegar_atividades()
+            atvd = None
+            tem_atividade = False
+
+            for atividade in atividades:
+                if (
+                    atividade["cod"] == codigo_atividade
+                    and atividade["criador"] == current_user["matricula"]
+                ):
+                    tem_atividade = True
+                    atvd = atividade
+                else:
+                    pass
+
+            if tem_atividade:
+                data = atvd["data"]
+
+                ano = data[-4:]
+                mes = data[-7:-5]
+                dia = data[0:2]
+
+                nova_data = ano + "-" + mes + "-" + dia
+
+                return render_template(
+                    "tela-atividade-edit.html",
+                    current_user=current_user,
+                    atvd=atvd,
+                    nova_data=nova_data,
+                )
+            else:
+                return redirect(url_for("home_page"))
+    else:
+        return redirect(url_for("login_page"))
+
+
+@app.route("/Excluir-atividade/<string:codigo>")
+def excluir_atividade(codigo):
+    if session.get("usuario_logado"):
+        atividades = Atividade.pegar_atividades()
+
+        for atividade in atividades:
+            if atividade["cod"] == codigo:
+                atividades.remove(atividade)
+                Atividade.atualizar_atividades(atividades)
+                flash("ATIVIDADE EXLUÍDA!")
+                return redirect(url_for("home_page"))
+            else:
+                pass
+
+        return redirect(url_for("home_page"))
+
+    else:
+        return redirect(url_for("login_page"))
 
 
 def salvar_imagem(imagem):
