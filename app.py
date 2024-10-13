@@ -76,7 +76,7 @@ def cadastro():
 
         cliente1.guardar_usuario()
 
-        flash("Usuário cadastrado")
+        flash("USUÁRIO CADASTRADO")
         return redirect(url_for("cadastro"))
 
     else:
@@ -220,6 +220,7 @@ def home_page():
             dicionario=dicionario,
             lista_atividades=lista_atividades,
             current_user=current_user,
+            usuarios=usuarios,
         )
 
     else:
@@ -448,7 +449,7 @@ def tela_atividades(codigo_atividade):
                 "tela-atividade.html", current_user=current_user, atvd=atvd
             )
         else:
-            flash("ACESSO RESTRITO!")
+            flash("ACESSO RESTRITO")
             return redirect(url_for("home_page"))
     else:
         return redirect(url_for("login_page"))
@@ -501,7 +502,7 @@ def tela_atividades_edit(codigo_atividade):
 
             Atividade.atualizar_atividades(atividades)
 
-            flash("ATIVIDADE ATUALIZADA!")
+            flash("ATIVIDADE ATUALIZADA")
             return redirect(
                 url_for("tela_atividades", codigo_atividade=codigo_atividade)
             )
@@ -564,7 +565,7 @@ def excluir_atividade(codigo):
             if atividade["cod"] == codigo:
                 atividades.remove(atividade)
                 Atividade.atualizar_atividades(atividades)
-                flash("ATIVIDADE EXLUÍDA!")
+                flash("ATIVIDADE DELETADA")
                 return redirect(url_for("home_page"))
             else:
                 pass

@@ -72,11 +72,74 @@
         "foto-perfil": "312245310_2030620787131767_403086996710218371_naecbd85049ecc2b8.jpg"
     },
     {
-        "nome": "Davi Melo",
+        "nome": "Davi Melo N",
         "matricula": "202214610020",
         "email": "davi.melo@gmail.com",
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
+        "lider": "s",
+        "foto-perfil": ""
+    },
+    {
+        "nome": "LUCIANO DE SOUZA BORGES",
+        "matricula": "159753",
+        "email": "lucianobass.pb@gmail.com",
+        "senha": "159753",
+        "turma": "3\u00ba de Inform\u00e1tica",
+        "lider": "n",
+        "foto-perfil": "321235457_918163099553044_5119720886840189251_n416ea3207876f632.jpg"
+    },
+    {
+        "nome": "Roberto Suarez",
+        "matricula": "202214610016",
+        "email": "robeto.suarez@gmail.com",
+        "senha": "1307",
+        "turma": "3\u00ba de Inform\u00e1tica",
+        "lider": "n",
+        "foto-perfil": ""
+    },
+    {
+        "nome": "Julia Feitosa",
+        "matricula": "202214610022",
+        "email": "julia@gmail.com",
+        "senha": "1307",
+        "turma": "2\u00ba de Inform\u00e1tica A",
+        "lider": "n",
+        "foto-perfil": ""
+    },
+    {
+        "nome": "Adalberto",
+        "matricula": "123456",
+        "email": "adalberto@gmail.com",
+        "senha": "1307",
+        "turma": "1\u00ba de Inform\u00e1tica A",
+        "lider": "n",
+        "foto-perfil": ""
+    },
+    {
+        "nome": "Guilber",
+        "matricula": "123456789",
+        "email": "guilber@gmail.com",
+        "senha": "1307",
+        "turma": "1\u00ba de Meio Ambiente A",
+        "lider": "n",
+        "foto-perfil": ""
+    },
+    {
+        "nome": "Jonatha",
+        "matricula": "202414610033",
+        "email": "jonatha@gmail.com",
+        "senha": "1307",
+        "turma": "3\u00ba de Inform\u00e1tica",
+        "lider": "s",
+        "foto-perfil": ""
+    },
+    {
+        "nome": "Robertinha",
+        "matricula": "202414710015",
+        "email": "robertinha@gmail.com",
+        "senha": "1307",
+        "turma": "1\u00ba de Meio Ambiente A",
         "lider": "s",
         "foto-perfil": ""
     }

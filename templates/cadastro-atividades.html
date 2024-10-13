@@ -9,7 +9,7 @@
         <div class="container-form">
             <form action="" method="post">
                 <div class="bloco-input">
-                    <label for="titulo">Digite o título da atividade</label>
+                    <label for="titulo">DIGITE O TÍTULO DA ATIVIDADE</label>
                     <input type="text" name="titulo" class="inputs-text inputs input-titulo">
                     <div class="aviso aviso-titulo">
                         <p>Digite pelo menos 4 caractéres</p>
@@ -18,12 +18,12 @@
                 </div>
 
                 <div class="bloco-input">
-                    <label for="descricao">Digite a descrição da atividade (*opcional*)</label>
+                    <label for="descricao">DIGITE A DESCRIÇÃO DA ATIVIDADE</label>
                     <input type="text" name="descricao" class="inputs-text inputs">
                 </div>
 
                 <div class="bloco-input bloco-data">
-                    <label for="data">Coloque a data da atividade</label>
+                    <label for="data">DATA DA ATIVIDADE</label>
                     <input type="date" name="data" id="data" class="input-date inputs">
                     <div class="aviso aviso-date">
                         <p>Digite pelo menos 4 caractéres</p>
@@ -33,7 +33,7 @@
 
                 {% if current_user['lider'] == 's' %}
                     <div class="bloco-input">
-                        <label for="selecionarvisibilidade">Selecione a visibilidade</label>
+                        <label for="selecionarvisibilidade">SELECIONE A VISIBILIDADE</label>
                         <select placeholder="Selecionar visibilidade" name="selecionarvisibilidade" class="input-select inputs">
                             <option>Privado</option>
                             <option>Público</option>
@@ -41,7 +41,7 @@
                     </div>
                 {% else %}
                     <div class="bloco-input">
-                        <label for="selecionarvisibilidade">Selecione a visibilidade</label>
+                        <label for="selecionarvisibilidade">SELECIONE A VISIBILIDADE</label>
                         <div class="input-select inputs div-select">
                             <p>Privado</p>
                             <img src="/static/imagens/lock.svg" alt="">

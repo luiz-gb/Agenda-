@@ -107,21 +107,23 @@
                         <h5 class="data-parte-baixo-urgencia">{{ data }}</h5>
                         <ul class="lista-atividades">
                             {% for item in dicionario[data]['lista_atividades'] %}
-                                <li>
-                                    <p>{{ item['titulo'] }}</p>
-                                    {% if item['status'] == 'Pendente'%}
-                                        <input type="checkbox" disabled>
-                                    {% else %}
-                                        <input type="checkbox" checked disabled>
-                                    {% endif %}
-                                    <a href="{{ url_for('tela_atividades', codigo_atividade=item['cod'] ) }}">ABRIR ATIVIDADE</a>
-                                    
-                                    {% if item['visibilidade'] == 'Público' %}
-                                        <div class="ajustar-imagem">
-                                            <img src="/static/imagens/coroa.svg" alt="" class="imagem-coroa-agenda">
-                                        </div>
-                                    {% endif %}
-                                </li>
+                            
+                                    <li>
+                                        <p>{{ item['titulo'] }}</p>
+                                        {% if item['status'] == 'Pendente'%}
+                                            <input type="checkbox" disabled>
+                                        {% else %}
+                                            <input type="checkbox" checked disabled>
+                                        {% endif %}
+                                        <a href="{{ url_for('tela_atividades', codigo_atividade=item['cod'] ) }}">ABRIR ATIVIDADE</a>
+                                        
+                                        {% if item['visibilidade'] == 'Público' %}
+                                            <div class="ajustar-imagem">
+                                                <img src="/static/imagens/coroa.svg" alt="" class="imagem-coroa-agenda">
+                                            </div>
+                                        {% endif %}
+                                    </li>
+                                 
                             {% endfor %}
                         </ul>
                     </div>

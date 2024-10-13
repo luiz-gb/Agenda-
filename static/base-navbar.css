@@ -32,8 +32,8 @@ body {
 }
 
 .navbar-logo img {
-    height: 6.67vh;
-    width: 6.67vh;
+    height: auto;
+    width: 17vh;
 }
 
 .navbar-search {
@@ -112,12 +112,14 @@ body {
 .perfil-expanded a {
     text-decoration: none;
     color: white;
+    font-size: 3;
 }
 
 .perfil-expanded div {
     display: flex;
     padding: 0.83vh 2.5vh;
     cursor: pointer;
+    align-items: center;
 }
 
 .perfil-expanded img {
@@ -129,19 +131,19 @@ body {
 /* Card */
 
 .card {
-    position: absolute;
+    position: fixed;
     display: flex;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    padding: 10px;
+    border-top-left-radius: 0.5vh;
+    border-top-right-radius: 0.5vh;
+    padding: 1.67vh;
     background-color: rgb(231, 231, 231);
     align-items: center;
     justify-self: center;
     left: 50%;
     transform: translateX(-50%);
-    top: 30px;
+    top: 5vh;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 3.33vh;
     opacity: 0.8;
     box-sizing: border-box;
     z-index: 20;
@@ -149,26 +151,24 @@ body {
 }
 
 .card button {
-    margin-left: 15px;
+    margin-left: 2.5vh;
     border: none;
     color: black;
-    font-size: 20px;
-
-    padding: 2px 8px;
-    border-radius: 10px;
+    font-size: 3.33vh;
+    padding: 0.33vh 1.33vh;
+    border-radius: 1.67vh;
     cursor: pointer;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 4.17vh;
 }
 
 .barra {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 5px;
+    height: 0.83vh;
     width: 100%;
     background-color: rgb(161, 161, 161);
-  
 }
 
 .barra2 {
