@@ -107,7 +107,7 @@
                         <h5 class="data-parte-baixo-urgencia">{{ data }}</h5>
                         <ul class="lista-atividades">
                             {% for item in dicionario[data]['lista_atividades'] %}
-                            
+                               
                                     <li>
                                         <p>{{ item['titulo'] }}</p>
                                         {% if item['status'] == 'Pendente'%}

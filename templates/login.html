@@ -9,7 +9,8 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="/static/imagens/estudify.svg" alt="jae">
+        <a href="{{ url_for("landing_page") }}"> <img class="logo" src="/static/imagens/estudify.svg" alt="jae">
+        </a>
     </header>
 
     {% with messages = get_flashed_messages(with_categories=True) %}

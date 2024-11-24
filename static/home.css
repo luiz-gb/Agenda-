@@ -227,6 +227,11 @@
 .lista-atividades li {
     display: flex;
     align-items: cen;
+    margin-bottom: 1vh;
+}
+
+.lista-atividades li:last-child {
+    margin-bottom: 0;
 }
 
 .lista-atividades p {

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="/static/landing_page.css">
+</head>
+<body>
+    <a href="#" class="setinha" id="rolar-cima">
+        <img src="/static/imagens/seta.svg" alt="">
+    </a>
+    <header class="navbar">
+        <img src="/static/imagens/estudify2.svg" alt="" class="logo">
+        <div class="links-navbar">
+            <a href="#secao1" class="link1 links" onclick="scrollToSection(event, 'secao1')">Suporte</a>
+            <a href="#secao2" class="link1 links" onclick="scrollToSection(event, 'secao2')">Sobre nós</a>
+            <a href="{{ url_for("login_page") }}" class="link2 links">Login</a>
+        </div>
+    </header>
+    <main>
+        <div class="parte1">
+            <div class="lado-imagem">
+                <img src="/static/imagens/cha.svg" alt="">
+            </div>
+            <div class="lado-textos">
+                <h1>Organize sua Vida Acadêmica!</h1>
+                <p>Gerencie suas tarefas diárias de forma prática e eficiente. Com nossa plataforma, você pode criar agendas personalizadas, definir prioridades e acompanhar o progresso de suas metas. Tudo em um só lugar, acessível de qualquer dispositivo.</p>
+                <a href="{{ url_for("cadastro") }}">Cadastre-se</a>
+            </div>
+        </div>
+        <div class="parte2">
+            <h1>Cadastre suas atividades</h1>
+            <p>No sistema, é possível cadastrar suas atividades de forma prática e organizada. Você pode adicionar um título personalizado que identifique a tarefa e incluir uma descrição detalhada. Assim, todas as informações essenciais ficam registradas. No sistema, é possível cadastrar suas atividades de forma prática e organizada. Você pode adicionar um título personalizado que identifique a tarefa e incluir uma descrição detalhada.</p>
+            <div>
+                <img src="/static/imagens/macl.svg" alt="" class="img1">
+                <img src="/static/imagens/mousepad.svg" alt="" class="img2">
+            </div>
+        </div>
+        <div class="parte3" id="secao2">
+            <h1>Sobre Nós</h1>
+            <p class="apresentacao">Luiz Borges, o principal desenvolvedor, é o gênio por trás de cada detalhe do site de agenda. Com habilidades excepcionais, ele domina todas as etapas do projeto, da codificação ao design. Luiz lidera com maestria. Lucas Dantas, Victor Augusto e Letícia Valdelino, cada um com funções de suporte, colaboram com dedicação. Luiz é brilhante.</p>
+            <div class="tela-devs">
+                <div class="tela">
+                    <img src="/static/imagens/luiz.jpg" alt="">
+                    <h5>Letícia Valdelino</h5>
+                    <p>Front-end Developer</p>
+                </div>
+                <div class="tela">
+                    <img src="/static/imagens/luiz.jpg" alt="">
+                    <h5>Lucas Dantas</h5>
+                    <p>Front-end Developer</p>
+                </div>
+                <div class="tela">
+                    <img src="/static/imagens/luiz.jpg" alt="">
+                    <h5>Luiz Borges</h5>
+                    <p>Android Developer</p>
+                </div>
+                <div class="tela">
+                    <img src="/static/imagens/victor.jpg" alt="">
+                    <h5>Victor Augusto</h5>
+                    <p>UX/UI Designer</p>
+                </div>
+            </div>
+            <p class="apresentacao2">
+                O projeto da agenda foi desenvolvido com muita dedicação e atenção aos detalhes, garantindo uma experiência prática e intuitiva para os usuários. Luiz Borges, o principal desenvolvedor, foi o responsável por criar a estrutura sólida e funcional do site, com o suporte da equipe, incluindo Lucas Dantas, Victor Augusto e Letícia Valdelino. Eles trabalharam juntos para criar uma plataforma de fácil acesso e navegação, que pode ser personalizada conforme as necessidades dos usuários. Caso surja algum problema ou dúvida, o site oferece um canal de contato direto com o suporte, onde é possível relatar bugs, tirar dúvidas sobre funcionalidades ou até mesmo sugerir melhorias para o sistema. A equipe de suporte está pronta para ajudar, garantindo que os usuários tenham a melhor experiência possível.
+            </p>
+        </div>
+        <div class="parte4" id="secao1">
+            <h1 class="suporte">Suporte</h1>
+            <div class="box1">
+                <div class="lado1">
+                    <h5 class="titulo-loc">Localização</h5>
+                    <p class="descricao-loc">Coração de Ednaldo,
+                        Ligiane, Cassimiro e
+                        Raimundio <3</p>
+                    <h5 class="titulo10">Siga-nos</h5>
+                    <div class="icones">
+                        <a href="#" ><img class="icone" src="/static/imagens/instagram.svg" alt=""></a>
+                        <a href="#" ><img class="icone" src="/static/imagens/twitter.svg" alt=""></a>
+                        <a href="#" ><img class="icone" src="/static/imagens/skype.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="lado2">
+                    <form action="" class="form">
+                        <h5 class="titulo-form">Formulário de Contato</h5>
+    
+                        <label for="nome" ></label>
+                        <input type="text" class="input-text " name="nome" id="" placeholder="Digite seu nome...">
+    
+                        <label for="email"></label>
+                        <input type="text" class="input-text" name="email" id="" placeholder="Digite seu email...">
+    
+                        <label for="descricao"></label>
+                        <textarea name="descricao" id="" placeholder="Digite sua mensagem..." class="input-text mensagem"></textarea>
+    
+                        <input type="button" value="Enviar" class="botao-form">
+               
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='scripts/landing_page.js') }}"></script>
+</body>
+</html>

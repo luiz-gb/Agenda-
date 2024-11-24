@@ -23,7 +23,10 @@ header {
 .logo {
     height: 8.5vh;
     width: auto;
-    margin-bottom: 3.2vh;
+}
+
+header a {
+    margin-bottom:2.4vh;
 }
 
 main {
@@ -219,7 +222,7 @@ form {
     position: absolute;
     background-color: white;
     padding: 2vh;
-    border: 2px solid rgb(151, 151, 151);
+    border: 0.6vh solid white;
     border-radius: 2.1vh;
     font-size: 2.4vh;
     z-index: 10;

@@ -122,6 +122,10 @@ body {
     align-items: center;
 }
 
+.perfil-expanded p {
+    font-size: 2.5vh;
+}
+
 .perfil-expanded img {
     margin-right: 1.67vh;
     height: auto;

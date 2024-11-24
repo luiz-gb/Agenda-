@@ -25,6 +25,11 @@ lideres = {
 }
 
 
+@app.route("/")
+def landing_page():
+    return render_template("landing_page.html")
+
+
 @app.route("/Login", methods=["GET", "POST"])
 def login_page():
     if request.method == "POST":
@@ -384,6 +389,7 @@ def cadastro_atividades():
             else:
                 visibilidade = "Privado"
 
+            flash("ATIVIDADE ADICIONADA")
             atividade1 = Atividade(
                 titulo, descricao, data_reformada, visibilidade, usuario_logado
             )
