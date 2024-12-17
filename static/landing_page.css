@@ -347,6 +347,10 @@ form {
     outline: none;
 }
 
+.box-mensagem {
+    flex: 1;
+}
+
 .mensagem {
     box-sizing: border-box;
     flex: 1;
@@ -413,4 +417,46 @@ form {
 .setinha img {
     height: auto;
     width: 4vh;
+}
+
+/* Avisos */
+
+.bloco-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.aviso {
+    display: none;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    padding: 2vh;
+    border: 0.6vh solid white;
+    border-radius: 2.1vh;
+    font-size: 2.4vh;
+    z-index: 10;
+    opacity: 0.8;
+    color: black;
+    top: 7vh;
+    left: 10vh;
+}
+
+
+.aviso::before {
+    content: "";
+    position: absolute;
+    top: -8px; 
+    left: 84%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px; 
+    border-style: solid;
+    border-color: transparent transparent white transparent; 
+}
+
+.aviso img {
+    margin-left: 20px;
+    height: 25px;
+    width: auto;;
 }

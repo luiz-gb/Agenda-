@@ -110,3 +110,28 @@ class Atividade:
     def atualizar_atividades(nova_lista):
         with open("atividades.json", "w") as arquivo:
             json.dump(nova_lista, arquivo, indent=4)
+
+
+class Suporte:
+    def __init__(self, nome, email, mensagem):
+        self.nome = nome
+        self.email = email
+        self.mensagem = mensagem
+
+    def guardar_suporte(self):
+        novo_usuario = {
+            "nome": self.nome,
+            "email": self.email,
+            "mensagem": self.mensagem,
+        }
+
+        try:
+            with open("suportes.json", "r") as arquivo:
+                suportes = json.load(arquivo)
+        except FileNotFoundError:
+            suportes = []
+
+        suportes.append(novo_usuario)
+
+        with open("suportes.json", "w") as arquivo:
+            json.dump(suportes, arquivo, indent=4)

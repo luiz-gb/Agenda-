@@ -2,11 +2,18 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from usuarios import *
 import json
 from datetime import datetime
+import yagmail
+
 
 # img
 from secrets import token_hex
 from PIL import Image
 import os
+
+# email
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 
 app = Flask(__name__)
@@ -25,9 +32,19 @@ lideres = {
 }
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def landing_page():
-    return render_template("landing_page.html")
+    if request.method == "POST":
+        nome = request.form.get("nome")
+        email = request.form.get("email")
+        mensagem = request.form.get("descricao")
+
+        suporte1 = Suporte(nome, email, mensagem)
+        suporte1.guardar_suporte()
+
+        return render_template("landing_page.html")
+    else:
+        return render_template("landing_page.html")
 
 
 @app.route("/Login", methods=["GET", "POST"])

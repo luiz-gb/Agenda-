@@ -82,19 +82,37 @@
                     </div>
                 </div>
                 <div class="lado2">
-                    <form action="" class="form">
+                    <form action="" class="form" method="post">
                         <h5 class="titulo-form">Formulário de Contato</h5>
+                        
+                        <div class="box-nome boxs bloco-input">
+                            <label for="nome" ></label>
+                            <input type="text" class="input-text input-nome" name="nome" id="" placeholder="Digite seu nome...">
+                            <div class="aviso aviso-nome">
+                                <p>Senha Curta</p>
+                                <img src="/static/imagens/urgencia.svg" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="box-email boxs bloco-input">
+                            <label for="email"></label>
+                            <input type="text" class="input-text input-email" name="email" id="" placeholder="Digite seu email...">
+                            <div class="aviso aviso-email">
+                                <p>Senha Curta</p>
+                                <img src="/static/imagens/urgencia.svg" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="box-mensagem boxs bloco-input">
+                            <label for="descricao"></label>
+                            <textarea name="descricao" id="" placeholder="Digite sua mensagem..." class="input-text mensagem input-descricao"></textarea>
+                            <div class="aviso aviso-descricao">
+                                <p>Senha Curta</p>
+                                <img src="/static/imagens/urgencia.svg" alt="">
+                            </div>
+                        </div>
     
-                        <label for="nome" ></label>
-                        <input type="text" class="input-text " name="nome" id="" placeholder="Digite seu nome...">
-    
-                        <label for="email"></label>
-                        <input type="text" class="input-text" name="email" id="" placeholder="Digite seu email...">
-    
-                        <label for="descricao"></label>
-                        <textarea name="descricao" id="" placeholder="Digite sua mensagem..." class="input-text mensagem"></textarea>
-    
-                        <input type="button" value="Enviar" class="botao-form">
+                        <input type="submit" value="Enviar" class="botao-form">
                
                     </form>
                 </div>
