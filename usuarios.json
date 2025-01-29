@@ -6,7 +6,8 @@
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "n",
-        "foto-perfil": "312245310_2030620787131767_403086996710218371_n9fabca81a18479e6.jpg"
+        "foto-perfil": "312245310_2030620787131767_403086996710218371_n9fabca81a18479e6.jpg",
+        "token": ""
     },
     {
         "nome": "Roberto Bobio",
@@ -15,7 +16,8 @@
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "Sim",
-        "foto-perfil": "240_F_368881299_zuSAOtaJgtj3XLAS0aHNm6tkNh8WSohH0cff345a16460948.jpg"
+        "foto-perfil": "240_F_368881299_zuSAOtaJgtj3XLAS0aHNm6tkNh8WSohH0cff345a16460948.jpg",
+        "token": ".eJxTSs_JR0aGBoYGDum5iZk5esn5uUoAtrwLCA.Z5oFYA.3Jkx1Dp4gIhRMWI1ipKAzTULFy8"
     },
     {
         "nome": "Victor Augusto Gomes de Souza",
@@ -24,7 +26,8 @@
         "senha": "2f8a0f8139A#",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "Sim",
-        "foto-perfil": ""
+        "foto-perfil": "",
+        "token": ""
     },
     {
         "nome": "guilherme",
@@ -33,7 +36,8 @@
         "senha": "guizin",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "Sim",
-        "foto-perfil": ""
+        "foto-perfil": "",
+        "token": ""
     },
     {
         "nome": "Junior Feitosa Filho Mel",
@@ -42,7 +46,8 @@
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "Sim",
-        "foto-perfil": ""
+        "foto-perfil": "",
+        "token": "Imx1aXptaWd1ZWxnYkBnbWFpbC5jb20i.Z5mRVw.VFF6w8blV24UDfIlg8_xwqGn-TM"
     },
     {
         "nome": "Robetinho",
@@ -51,7 +56,8 @@
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "Sim",
-        "foto-perfil": ""
+        "foto-perfil": "",
+        "token": ""
     },
     {
         "nome": "Adalberto",
@@ -60,16 +66,8 @@
         "senha": "1307",
         "turma": "1\u00ba de Meio Ambiente A",
         "lider": "Sim",
-        "foto-perfil": ""
-    },
-    {
-        "nome": "Adal Junios",
-        "matricula": "202214610040",
-        "email": "glogloglogloglo1010@gmail.com",
-        "senha": "1307",
-        "turma": "3\u00ba de Inform\u00e1tica",
-        "lider": "Sim",
-        "foto-perfil": "312245310_2030620787131767_403086996710218371_naecbd85049ecc2b8.jpg"
+        "foto-perfil": "",
+        "token": ""
     },
     {
         "nome": "Davi Melo N",
@@ -78,7 +76,8 @@
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "s",
-        "foto-perfil": ""
+        "foto-perfil": "",
+        "token": ""
     },
     {
         "nome": "LUCIANO DE SOUZA BORGES",
@@ -87,7 +86,8 @@
         "senha": "159753",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "n",
-        "foto-perfil": "321235457_918163099553044_5119720886840189251_n416ea3207876f632.jpg"
+        "foto-perfil": "321235457_918163099553044_5119720886840189251_n416ea3207876f632.jpg",
+        "token": ""
     },
     {
         "nome": "Roberto Suarez",
@@ -96,7 +96,8 @@
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "n",
-        "foto-perfil": ""
+        "foto-perfil": "",
+        "token": ""
     },
     {
         "nome": "Julia Feitosa",
@@ -105,7 +106,8 @@
         "senha": "1307",
         "turma": "2\u00ba de Inform\u00e1tica A",
         "lider": "n",
-        "foto-perfil": ""
+        "foto-perfil": "",
+        "token": ""
     },
     {
         "nome": "Adalberto",
@@ -114,7 +116,8 @@
         "senha": "1307",
         "turma": "1\u00ba de Inform\u00e1tica A",
         "lider": "n",
-        "foto-perfil": ""
+        "foto-perfil": "",
+        "token": ""
     },
     {
         "nome": "Guilber",
@@ -123,7 +126,8 @@
         "senha": "1307",
         "turma": "1\u00ba de Meio Ambiente A",
         "lider": "n",
-        "foto-perfil": ""
+        "foto-perfil": "",
+        "token": ""
     },
     {
         "nome": "Jonatha",
@@ -132,7 +136,8 @@
         "senha": "1307",
         "turma": "3\u00ba de Inform\u00e1tica",
         "lider": "s",
-        "foto-perfil": ""
+        "foto-perfil": "",
+        "token": ""
     },
     {
         "nome": "Robertinha",
@@ -141,6 +146,7 @@
         "senha": "1307",
         "turma": "1\u00ba de Meio Ambiente A",
         "lider": "s",
-        "foto-perfil": ""
+        "foto-perfil": "",
+        "token": ""
     }
 ]

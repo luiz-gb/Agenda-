@@ -20,6 +20,7 @@ class Cliente:
             "turma": self.turma,
             "lider": self.lider,
             "foto-perfil": "",
+            "token": "",
         }
 
         try:

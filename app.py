@@ -3,7 +3,8 @@ from usuarios import *
 import json
 from datetime import datetime
 import yagmail
-
+import serializer
+from itsdangerous import URLSafeTimedSerializer
 
 # img
 from secrets import token_hex
@@ -18,6 +19,21 @@ from email.mime.multipart import MIMEMultipart
 
 app = Flask(__name__)
 app.secret_key = "NSNS2UQ8Q6FDQ6FSBA6"
+
+serializer = URLSafeTimedSerializer(app.secret_key)
+
+# email
+from flask_mail import Mail, Message
+
+# Configurações do Flask-Mail
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USERNAME"] = "studify.empresa@gmail.com"
+app.config["MAIL_PASSWORD"] = "knta oqkl hfep kgsp"
+app.config["MAIL_DEFAULT_SENDER"] = "studify.empresa@gmail.com"
+
+mail = Mail(app)
 
 lideres = {
     "3º de Informática": "202214610020",
@@ -68,7 +84,7 @@ def login_page():
 
             else:
                 # Se não encontrar o usuário, mostrar mensagem de erro
-                flash("Usuário inválido", "error")
+                flash("Usuário ou senha inválidos", "error")
                 return redirect(url_for("login_page"))
 
     else:
@@ -597,6 +613,69 @@ def excluir_atividade(codigo):
 
     else:
         return redirect(url_for("login_page"))
+
+
+@app.route("/Email-Recuperacao", methods=["GET", "POST"])
+def recuperacao_senha():
+    if request.method == "POST":
+        email_recup = request.form.get("email")
+        lista_usuarios = Cliente.pegar_usuarios()
+        i_usuario_encontrado = None
+
+        tem_email_igual = False
+        for usuario in lista_usuarios:
+            if usuario["email"] == email_recup:
+                tem_email_igual = True
+                i_usuario_encontrado = lista_usuarios.index(usuario)
+
+        if tem_email_igual:
+            token = serializer.dumps(email_recup)
+            lista_usuarios[i_usuario_encontrado]["token"] = token
+            print(lista_usuarios[i_usuario_encontrado]["token"])
+
+            Cliente.atualizar_usuarios(lista_usuarios)
+
+            # Criar o link de recuperação
+            link_recuperacao = url_for("redefinir_senha", token=token, _external=True)
+
+            # Enviar o e-mail
+            msg = Message("Recuperação de Senha", recipients=[email_recup])
+            msg.body = f"Você solicitou a recuperação de sua senha. Clique no link abaixo para redefinir sua senha:\n{link_recuperacao}"
+            try:
+                mail.send(msg)  # Envia o e-mail
+                flash("Link de Recuperação Enviado", "error")
+                return redirect(url_for("login_page"))
+            except Exception as e:
+                print(f"Erro ao enviar e-mail: {str(e)}")
+                flash("Não Foi Possível Enviar O Email", "error")
+                return redirect(url_for("login_page"))
+
+        else:
+            flash("Email Não Encontrado", "error")
+            return redirect(url_for("login_page"))
+    else:
+        return render_template("recuperacao-senha.html")
+
+
+@app.route("/Redefinir-Senha/<string:token>", methods=["GET", "POST"])
+def redefinir_senha(token):
+    if request.method == "POST":
+        nova_senha = request.form.get("senha")
+
+        lista_usuarios = Cliente.pegar_usuarios()
+        i_meu_user = None
+
+        for usuario in lista_usuarios:
+            if usuario["token"] == token:
+                i_meu_user = lista_usuarios.index(usuario)
+
+        lista_usuarios[i_meu_user]["senha"] = nova_senha
+        Cliente.atualizar_usuarios(lista_usuarios)
+
+        flash("Senha Redefinida", "error")
+        return redirect(url_for("login_page"))
+    else:
+        return render_template("redefinir-senha.html")
 
 
 def salvar_imagem(imagem):
